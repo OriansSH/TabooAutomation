@@ -133,6 +133,7 @@ playwright-report
 screenshots
 allure-results
 automation-allure-report
+test-results
 
 
 
