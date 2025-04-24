@@ -8,9 +8,7 @@ import * as loginFunctions from './login-functions';
 test.describe('Taboo > Login Widget Tests', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto(utils.urlEnv);
-        await generalFunctions.clickOnSignUpbutton(page);
-        // Will be delete after Fix BG-54
-        await generalFunctions.openRegisterForm(page);
+        await generalFunctions.openLoginForm(page);
     });
 
     test('Taboo > Login > Valid Login Procces', async ({ page }) => {
@@ -24,9 +22,7 @@ test.describe('Taboo > Login Widget Tests', () => {
 test.describe('Taboo > Login Widget > Validations Tests', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto(utils.urlEnv);
-        await generalFunctions.clickOnSignUpbutton(page);
-        // Will be delete after Fix BG-54
-        await generalFunctions.openRegisterForm(page);
+        await generalFunctions.openLoginForm(page);
     });
 
     test('Taboo > Login Widget > Empty Fields Validation', async ({ page }) => {
