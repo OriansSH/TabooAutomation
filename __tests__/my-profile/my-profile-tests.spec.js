@@ -5,9 +5,7 @@ import * as myProfileFunctions from './my-profile-functions';
 test.describe('My Profile Tests', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('https://stage2.quotecores.com/');
-        await generalFunctions.clickOnSignUpbutton(page);
-        // Will be delete after Fix BG-54
-        await generalFunctions.openRegisterForm(page);
+        await generalFunctions.openLoginForm(page);
         await generalFunctions.loginProcess(page);
     });
 

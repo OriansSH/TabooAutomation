@@ -7,7 +7,7 @@ import * as registerFunctions from './register-functions';
 test.describe('Taboo > Register Widget Tests', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto(utils.urlEnv);
-        await generalFunctions.clickOnSignUpbutton(page);
+        await generalFunctions.openRegisterForm(page);
     });
 
     test('Taboo > Valid Register Process', async ({ page }) => {
@@ -25,7 +25,7 @@ test.describe('Taboo > Register Widget Tests', () => {
 test.describe('Taboo > Register Widget > Validations Tests', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto(utils.urlEnv);
-        await generalFunctions.clickOnSignUpbutton(page);
+        await generalFunctions.openRegisterForm(page);
     });
 
     test('Taboo > Register Widget > Empty Fields > Validation', async ({ page }) => {
@@ -34,12 +34,14 @@ test.describe('Taboo > Register Widget > Validations Tests', () => {
         await generalFunctions.registerValidationText(page);
     });
     test('Taboo > Register Widget > Password Field > Special Character Validation', async ({ page }) =>{
+        await registerFunctions.hardCodedRegister(page);
         await generalFunctions.shadowRootRegister(page, utils.passwordField, 'specialChar1');
         await generalFunctions.clickRegisterButton(page);
         const specialCharValidation=  await generalFunctions.getValidationLocator(page, utils.specialCharValidation);
         await expect(specialCharValidation).toHaveText(utils.specialCharValidation);
     });
     test('Taboo > Register Widget > Password Field > At Least One Digit Validation', async ({ page }) =>{
+        await registerFunctions.hardCodedRegister(page);
         await generalFunctions.shadowRootRegister(page, utils.passwordField, 'testval');
         await generalFunctions.clickRegisterButton(page);
         const specialCharValidation=  await generalFunctions.getValidationLocator(page, utils.oneDigitValidation);

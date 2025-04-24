@@ -1,12 +1,13 @@
 import { expect } from "@playwright/test";
+import * as loginFunctions from './login/login-functions';
 
-export async function clickOnSignUpbutton(page) {
-    const signUpButton = page.locator('.header--login');
-    await signUpButton.click();
-}
 export async function openRegisterForm(page) {
-    const registerForm = page.locator('pce-register').locator('.local-link');
+    const registerForm = page.locator('.header--auth--sign-up');
     await registerForm.click();
+}
+export async function openLoginForm(page) {
+    const loginForm = page.locator('.header--auth--login');
+    await loginForm.click();
 }
 export async function shadowRootRegister(page, field, input) {
     const fieldInput = page.locator('pce-register').locator(field);
@@ -39,8 +40,8 @@ export async function registerValidationText(page) {
     }
 }
 export async function loginProcess(page) {
-    await shadowRootLogin(page, '#email', 'or@gmail.com');
-    await shadowRootLogin(page, '#password', 'Orian154');
+    await loginFunctions.shadowRootLogin(page, '#email', 'or@gmail.com');
+    await loginFunctions.shadowRootLogin(page, '#password', 'Orian154');
     const registerButton = await clickLoginButton(page);
     await expect(registerButton).toBeHidden();
 }
