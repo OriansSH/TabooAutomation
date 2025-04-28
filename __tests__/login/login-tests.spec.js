@@ -12,8 +12,8 @@ test.describe('Taboo > Login Widget Tests', () => {
     });
 
     test('Taboo > Login > Valid Login Procces', async ({ page }) => {
-        await loginFunctions.shadowRootLogin(page, utils.emailField, 'or@gmail.com');
-        await loginFunctions.shadowRootLogin(page, utils.passwordField, 'Orian154');
+        await loginFunctions.shadowRootLogin(page, utils.emailField, utils.testUserEmail);
+        await loginFunctions.shadowRootLogin(page, utils.passwordField, utils.testUserPassword);
         const registerButton = await generalFunctions.clickLoginButton(page);
         await expect(registerButton).toBeHidden();
     });

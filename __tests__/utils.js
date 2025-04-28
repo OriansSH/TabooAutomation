@@ -13,6 +13,8 @@ const lastNameField = '#lastName';
 const emailField = '#email';
 const passwordField = '#password';
 const confirmPasswordField = '#confirmPassword';
+const testUserEmail = 'oriantest@gmail.com';
+const testUserPassword = 'Orian154!';
 
 export {
     urlEnv,
@@ -28,4 +30,6 @@ export {
     registerWidget,
     myProfileWidget,
     uniqueEmail,
+    testUserEmail,
+    testUserPassword,
 };
