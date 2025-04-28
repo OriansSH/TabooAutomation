@@ -1,5 +1,6 @@
 import { expect } from "@playwright/test";
 import * as loginFunctions from './login/login-functions';
+import * as utils from './utils';
 
 export async function openRegisterForm(page) {
     const registerForm = page.locator('.header--auth--sign-up');
@@ -40,8 +41,8 @@ export async function registerValidationText(page) {
     }
 }
 export async function loginProcess(page) {
-    await loginFunctions.shadowRootLogin(page, '#email', 'or@gmail.com');
-    await loginFunctions.shadowRootLogin(page, '#password', 'Orian154');
+    await loginFunctions.shadowRootLogin(page, utils.emailField, utils.testUserEmail);
+    await loginFunctions.shadowRootLogin(page, utils.passwordField, utils.testUserPassword);
     const registerButton = await clickLoginButton(page);
     await expect(registerButton).toBeHidden();
 }
