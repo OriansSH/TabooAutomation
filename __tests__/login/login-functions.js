@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import * as utils from '../utils';
+import * as utils from '../utils.js';
 
 
 export async function shadowRootLogin(page, field, input) {

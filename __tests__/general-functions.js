@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
-import * as loginFunctions from './login/login-functions';
-import * as utils from './utils';
+import * as loginFunctions from './login/login-functions.js';
+import * as utils from './utils.js';
 
 export async function openRegisterForm(page) {
     const registerForm = page.locator('.header--auth--sign-up');
