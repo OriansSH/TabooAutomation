@@ -2,12 +2,18 @@ import { test, expect } from '@playwright/test';
 import * as generalFunctions from '../general-functions';
 import * as utils from '../utils';
 import * as contactUsFunctions from './contact-us-functions';
+import { execSync } from 'child_process';
 
 test.describe('Contact Us Tests', () => {
+    test.beforeAll(() => {
+        execSync('node __tests__/setup/login.setup.js', { stdio: 'inherit' });
+    });
+    test.use({ storageState: 'storage/loginState.json' });
+    
     test.beforeEach(async ({ page }) => {
         await page.goto(utils.urlEnv);
-        await generalFunctions.openLoginForm(page);
-        await generalFunctions.loginProcess(page);
+        // await generalFunctions.openLoginForm(page);
+        // await generalFunctions.loginProcess(page);
         await generalFunctions.clickOnAvatarIcon(page);
     });
 

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import * as generalFunctions from '../general-functions';
-import * as utils from '../utils';
+import * as generalFunctions from '../general-functions.js';
+import * as utils from '../utils.js';
 import * as loginFunctions from './login-functions';
 
 
