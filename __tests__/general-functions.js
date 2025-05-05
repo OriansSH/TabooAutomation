@@ -49,4 +49,14 @@ export async function loginProcess(page) {
 export async function clickOnAvatarIcon(page) {
     const menu = page.locator('.header--actions--avatar');
     await menu.click();
+    return menu;
+}
+export async function clickOnGameLobby(page, gameName) {
+    const game = page.getByRole('button', { name: gameName }).nth(0);
+    await game.click();
+}
+export async function logOutButton(page) {
+    const logoutButton = page.locator('.side-menu-container--menu--table--entry.sign-out');
+    return logoutButton;
+    
 }

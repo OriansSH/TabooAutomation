@@ -6,9 +6,10 @@ const registerWidget = 'pce-register';
 const myProfileWidget = 'pce-my-profile';
 const contactUsWidget = 'pce-contact-us';
 const urlEnv = 'https://stage2.quotecores.com/';
-const wrongCredentialsValidation = 'Authentication failed. Please check your credentials and try again.';
+const wrongCredentialsValidation = 'Email or Password are incorrect';
 const specialCharValidation = 'Password must contain at least one special character';
 const oneDigitValidation = 'Password must contain at least one digit';
+const duplicateEmailValidation = 'Email already exists. Please log in or reset your password';
 const firstNameField = '#firstName';
 const lastNameField = '#lastName';
 const emailField = '#email';
@@ -36,4 +37,5 @@ export {
     testUserEmail,
     testUserPassword,
     contactUsEmptyValidation,
+    duplicateEmailValidation
 };
