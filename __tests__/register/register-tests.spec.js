@@ -47,4 +47,12 @@ test.describe('Taboo > Register Widget > Validations Tests', () => {
         const specialCharValidation=  await generalFunctions.getValidationLocator(page, utils.oneDigitValidation);
         await expect(specialCharValidation).toHaveText(utils.oneDigitValidation);
     });
+    // To TEST
+    test('Taboo > Register Widget > Duplicate Email Validation', async ({ page }) => {
+        await registerFunctions.hardCodedRegister(page);
+        await generalFunctions.clickRegisterButton(page);
+        const duplicateEmailValidation = await generalFunctions.getValidationLocator(page, utils.duplicateEmailValidation);
+        await expect(duplicateEmailValidation).toHaveText(utils.duplicateEmailValidation);
+    }
+    );
 });

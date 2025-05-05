@@ -17,6 +17,22 @@ test.describe('Taboo > Login Widget Tests', () => {
         const registerButton = await generalFunctions.clickLoginButton(page);
         await expect(registerButton).toBeHidden();
     });
+    test('Taboo > Login > Open Login form via Game Image', async ({ page }) => {
+        const xButton = await loginFunctions.loginClickOnXButton(page);
+        await xButton.click();
+        await generalFunctions.clickOnGameLobby(page, 'Play Majestic King');
+        await loginFunctions.shadowRootLogin(page, utils.emailField, utils.testUserEmail);
+        await loginFunctions.shadowRootLogin(page, utils.passwordField, utils.testUserPassword);
+        const registerButton = await generalFunctions.clickLoginButton(page);
+        await expect(registerButton).toBeHidden();
+    });
+    test('Taboo > Logged in Customer > Logout process', async ({ page }) => {
+        await generalFunctions.loginProcess(page);
+        await generalFunctions.clickOnAvatarIcon(page);
+        const logoutButton = await generalFunctions.logOutButton(page);
+        await logoutButton.click();
+        await expect(logoutButton).toBeHidden();
+    });
 });
 
 test.describe('Taboo > Login Widget > Validations Tests', () => {

@@ -18,4 +18,8 @@ export async function loginValidationText(page) {
 }
 export async function loginGeneralError(page, text) {
     return page.locator(utils.loginWidget).locator(`.error-message:has-text("${text}")`);
- }
+}
+export async function loginClickOnXButton(page) {
+    const xButton = page.locator('.modal-container--modal--close');
+    return xButton;
+}
