@@ -22,7 +22,7 @@ export default [
             "no-process-exit": "off",
             "class-methods-use-this": "off",
             "no-restricted-globals": "warn",
-            "playwright/no-conditional-expect": "off"
+            "playwright/no-conditional-expect": "on"
         }
     },
 ];

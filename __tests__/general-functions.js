@@ -1,5 +1,4 @@
 import { expect } from "@playwright/test";
-import * as loginFunctions from './login/login-functions.js';
 import * as utils from './utils.js';
 
 export async function openRegisterForm(page) {
@@ -25,7 +24,7 @@ export async function clickRegisterButton(page) {
     return registerButton;
 }
 export async function getValidationLocator(page, expectedText) {
-    return page.locator('pce-register').locator(`p.error-message:has-text("${expectedText}")`);
+    return page.locator('pce-register').locator(`.error-message:has-text("${expectedText}")`);
 }
 
 export async function registerValidationText(page) {
@@ -58,5 +57,4 @@ export async function clickOnGameLobby(page, gameName) {
 export async function logOutButton(page) {
     const logoutButton = page.locator('.side-menu-container--menu--table--entry.sign-out');
     return logoutButton;
-    
 }
