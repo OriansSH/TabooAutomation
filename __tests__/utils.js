@@ -8,17 +8,31 @@ const contactUsWidget = 'pce-contact-us';
 const urlEnv = 'https://stage2.quotecores.com/';
 const wrongCredentialsValidation = 'Email or Password are incorrect';
 const specialCharValidation = 'Password must contain at least one special character';
-const oneDigitValidation = 'Password must contain at least one digit';
+const oneDigitValidation = 'Password must contain at least one number';
 const duplicateEmailValidation = 'Email already exists. Please log in or reset your password';
 const firstNameField = '#firstName';
 const lastNameField = '#lastName';
 const emailField = '#email';
 const passwordField = '#password';
 const confirmPasswordField = '#confirmPassword';
-const testUserEmail = 'oriantest@gmail.com';
+const testUserEmail = 'orianAutomation@gmail.com';
 const testUserPassword = 'Orian154!';
+const wrongPassword = 'wrongpw!1';
+const specialPassword = 'wrongpw1';
+const oneDigitPassword = 'wrongpw!';
+const unMatchedPaswword = 'UnMatched!';
 const contactUsEmptyValidation = 'Message must be at least 10 characters';
-
+const loginButton = 'button[type="submit"]';
+const loginXButton = '.modal-container--modal--close';
+const logOutButton = '.side-menu-container--menu--table--entry.sign-out';
+const avatarIcon = '.header--actions--avatar';
+const consentHeadLine = 'Almost there';
+const consentCheckBox = 'button.consent-checkbox';
+const consentAcceptButton = 'button.submit-button';
+const validationLocator = 'p.error-message';
+const registerValidationsLocator = '.error-message';
+const unMatchedPasswordValidation = 'Passwords do not match'
+const test = 'test';
 export {
     urlEnv,
     wrongCredentialsValidation,
@@ -37,5 +51,19 @@ export {
     testUserEmail,
     testUserPassword,
     contactUsEmptyValidation,
-    duplicateEmailValidation
+    duplicateEmailValidation,
+    loginButton,
+    loginXButton,
+    logOutButton,
+    avatarIcon,
+    wrongPassword,
+    specialPassword,
+    oneDigitPassword,
+    consentHeadLine,
+    consentCheckBox,
+    consentAcceptButton,
+    validationLocator,
+    registerValidationsLocator,
+    unMatchedPasswordValidation,
+    unMatchedPaswword
 };
