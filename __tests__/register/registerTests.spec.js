@@ -2,7 +2,6 @@ import { expect, test } from "@playwright/test";
 import * as utils from '../utils.js';
 import { RegisterPage } from './RegisterPage.js';
 import { GeneralPage } from '../GeneralPage.js';
-import { LoginPage } from "../login/LoginPage.js";
 
 test.describe('Taboo > Register Widget Tests', () => {
     let registerPage;
