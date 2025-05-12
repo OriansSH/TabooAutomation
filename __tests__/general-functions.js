@@ -58,3 +58,6 @@ export async function logOutButton(page) {
     const logoutButton = page.locator('.side-menu-container--menu--table--entry.sign-out');
     return logoutButton;
 }
+export async function clickOnXButton(page) {
+    await page.locator('.modal-container--modal--close').click();
+}

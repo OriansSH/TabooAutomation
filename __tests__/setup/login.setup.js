@@ -1,4 +1,3 @@
-// import { loginProcess, openLoginForm } from '../general-functions.js';
 import { LoginPage } from '../login/LoginPage.js'
 import { GeneralPage } from '../GeneralPage.js';
 import * as utils from '../utils.js';

@@ -12,8 +12,6 @@ test.describe('Contact Us Tests', () => {
     
     test.beforeEach(async ({ page }) => {
         await page.goto(utils.urlEnv);
-        // await generalFunctions.openLoginForm(page);
-        // await generalFunctions.loginProcess(page);
         await generalFunctions.clickOnAvatarIcon(page);
     });
 
@@ -40,7 +38,7 @@ test.describe('Contact Us Tests', () => {
         const contactUsButton = await contactUsFunctions.contactUsElement(page);
         await expect(contactUsButton).toBeVisible();
         await contactUsButton.click();
-        await contactUsFunctions.clickOnXButton(page);
+        await generalFunctions.clickOnXButton(page);
         await contactUsFunctions.contactUsHidden(page, expect);
     });
 

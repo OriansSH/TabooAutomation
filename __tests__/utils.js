@@ -26,13 +26,16 @@ const loginButton = 'button[type="submit"]';
 const loginXButton = '.modal-container--modal--close';
 const logOutButton = '.side-menu-container--menu--table--entry.sign-out';
 const avatarIcon = '.header--actions--avatar';
+const pruchaseGoldButton = '.header--funds--add.gold'
+const pruchaseSecretButton = '.header--funds--add.secret'
+const toggleGoldButton = '.header--funds--coins--icon.gold'
+const toggleSecretButton = '.header--funds--coins--icon.secret'
 const consentHeadLine = 'Almost there';
 const consentCheckBox = 'button.consent-checkbox';
 const consentAcceptButton = 'button.submit-button';
 const validationLocator = 'p.error-message';
 const registerValidationsLocator = '.error-message';
 const unMatchedPasswordValidation = 'Passwords do not match'
-const test = 'test';
 export {
     urlEnv,
     wrongCredentialsValidation,
@@ -65,5 +68,9 @@ export {
     validationLocator,
     registerValidationsLocator,
     unMatchedPasswordValidation,
-    unMatchedPaswword
+    unMatchedPaswword,
+    pruchaseGoldButton,
+    pruchaseSecretButton,
+    toggleGoldButton,
+    toggleSecretButton,
 };
