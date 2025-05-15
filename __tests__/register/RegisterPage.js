@@ -11,7 +11,7 @@ export class RegisterPage {
         this.passwordField = this.registerWidget.locator(utils.passwordField);
         this.confirmPasswordField = this.registerWidget.locator(utils.confirmPasswordField);
         this.createAccountButton = this.registerWidget.locator(utils.loginButton);
-        this.consentHeadLine = page.locator(utils.consentHeadLine);
+        this.consentHeadLine = page.locator(`text=${utils.consentHeadLine}`);
         this.consentCheckBox = page.locator(utils.consentCheckBox);
         this.consentAcceptButton = page.locator(utils.consentAcceptButton);
     }
@@ -21,7 +21,7 @@ export class RegisterPage {
     async clickConsentCheckboxes() {
         const count = await this.consentCheckBox.count();
         for (let i = 0; i < count; i++) {
-            await checkboxes.nth(i).click();
+            await this.consentCheckBox.nth(i).click();
         }
     }
     async verifyAcceptButtonState(enabled = true) {
@@ -53,11 +53,12 @@ export class RegisterPage {
         return this.createAccountButton;
     }
     async hardCodedRegister() {
-        await this.fillFirstName('Test');
+        await this.fillFirstName('Automation');
         await this.filllLastName('User');
         await this.fillEmail(utils.uniqueEmail);
         await this.fillPassword(utils.testUserPassword);
         await this.fillConfirmPassword(utils.testUserPassword);
+        console.log('Registering Email:', utils.uniqueEmail);
     }
     async expectEmptyFieldValidationMessages() {
         const messages = [

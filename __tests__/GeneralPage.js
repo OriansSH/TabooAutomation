@@ -21,6 +21,7 @@ async clickOngameLobby (gameName) {
     await game.click();
 }
 async openUserMenu() {
+    await expect(this.avatarIcon).toBeVisible({timeout: 10000});
     await this.avatarIcon.click();
 }
 async clickLogoutButton() {

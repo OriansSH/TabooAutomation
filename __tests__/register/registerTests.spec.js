@@ -12,8 +12,7 @@ test.describe('Taboo > Register Widget Tests', () => {
         generalPage = new GeneralPage(page);
         await generalPage.openRegisterForm();
     });
-    // Test will Failed Untill Bug will Fixed
-    test('Taboo > Valida Register Process', async ({ page }) => {
+    test('Taboo > Valid Register Process', async ({ page }) => {
         await registerPage.hardCodedRegister(page);
         const createAccountButton = await registerPage.clickCreateAccountButton();
         await expect(createAccountButton).toBeHidden();
@@ -21,6 +20,7 @@ test.describe('Taboo > Register Widget Tests', () => {
         await registerPage.verifyAcceptButtonState(false);
         await registerPage.clickConsentCheckboxes();
         await registerPage.verifyAcceptButtonState(true);
+        await generalPage.openUserMenu();
     });
 });
 

@@ -3,8 +3,11 @@ import * as generalFunctions from '../general-functions';
 import * as myProfileFunctions from './my-profile-functions';
 import * as utils from '../utils.js';
 import { execSync } from 'child_process';
+import { Purchase } from '../purchase/PurchasePage.js';
 
 test.describe('My Profile Tests', () => {
+    let purchase;
+
     test.beforeAll(() => {
         execSync('node __tests__/setup/login.setup.js', { stdio: 'inherit' });
     });
@@ -14,6 +17,7 @@ test.describe('My Profile Tests', () => {
     test.beforeEach(async ({ page }) => {
 
         await page.goto(utils.urlEnv);
+        purchase = new Purchase(page);
     });
 
     test('Taboo > My Profile > Edit profile > All Fileds are Disabled by default', async ({ page }) => {
@@ -31,15 +35,5 @@ test.describe('My Profile Tests', () => {
         await myProfileFunctions.fillMyProfileFields(page, utils.lastNameField, 'Test');
         const saveButton = await myProfileFunctions.saveChangesButton(page);
         await expect(saveButton).toBeHidden();
-    });
-    // Future Test for Purchase process
-    test('Taboo > LoggedIn Customer > Click on Purchase Button', async ({ page}) => {
-    const purchaseGoldButton = page.locator(utils.pruchaseGoldButton);
-    await purchaseGoldButton.click();
-    await generalFunctions.clickOnXButton(page);
-    const toggleGoldButton = page.locator(utils.toggleGoldButton);
-    await toggleGoldButton.click();
-    const purchaseSecretButton = page.locator(utils.pruchaseSecretButton);
-    await purchaseSecretButton.click();
     });
 });

@@ -5,7 +5,7 @@ const loginWidget = 'pce-log-in';
 const registerWidget = 'pce-register';
 const myProfileWidget = 'pce-my-profile';
 const contactUsWidget = 'pce-contact-us';
-const urlEnv = 'https://stage2.quotecores.com/';
+const urlEnv = 'https://dev-cms.plaee.dev/';
 const wrongCredentialsValidation = 'Email or Password are incorrect';
 const specialCharValidation = 'Password must contain at least one special character';
 const oneDigitValidation = 'Password must contain at least one number';
@@ -26,13 +26,14 @@ const loginButton = 'button[type="submit"]';
 const loginXButton = '.modal-container--modal--close';
 const logOutButton = '.side-menu-container--menu--table--entry.sign-out';
 const avatarIcon = '.header--actions--avatar';
-const pruchaseGoldButton = '.header--funds--add.gold'
-const pruchaseSecretButton = '.header--funds--add.secret'
+const purchaseGoldButton = '.header--funds--add.gold'
+const purchaseSecretButton = '.header--funds--add.secret'
 const toggleGoldButton = '.header--funds--coins--icon.gold'
 const toggleSecretButton = '.header--funds--coins--icon.secret'
-const consentHeadLine = 'Almost there';
+const consentHeadLine = `Almost there!`;
 const consentCheckBox = 'button.consent-checkbox';
 const consentAcceptButton = 'button.submit-button';
+const xButton = '.modal-container--modal--close'
 const validationLocator = 'p.error-message';
 const registerValidationsLocator = '.error-message';
 const unMatchedPasswordValidation = 'Passwords do not match'
@@ -69,8 +70,9 @@ export {
     registerValidationsLocator,
     unMatchedPasswordValidation,
     unMatchedPaswword,
-    pruchaseGoldButton,
-    pruchaseSecretButton,
+    purchaseGoldButton,
+    purchaseSecretButton,
     toggleGoldButton,
     toggleSecretButton,
+    xButton,
 };
