@@ -7,6 +7,9 @@ const config = {
     fullyParallel: false,
     workers: 1,
     testDir: './__tests__',
+    use: {
+        headless: true,
+      },
     projects: [
         {
             name: 'Taboo-project',
