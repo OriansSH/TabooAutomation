@@ -4,7 +4,7 @@ import * as utils from '../utils.js';
 import { execSync } from 'child_process';
 import { Purchase } from './PurchasePage.js';
 
-test.describe('My Profile Tests', () => {
+test.describe('Purchase Tests', () => {
     let purchase;
 
     test.beforeAll(() => {

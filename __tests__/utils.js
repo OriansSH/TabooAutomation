@@ -31,8 +31,8 @@ const purchaseSecretButton = '.header--funds--add.secret'
 const toggleGoldButton = '.header--funds--coins--icon.gold'
 const toggleSecretButton = '.header--funds--coins--icon.secret'
 const consentHeadLine = `Almost there!`;
-const consentCheckBox = 'button.consent-checkbox';
-const consentAcceptButton = 'button.submit-button';
+const consentCheckBox = 'button.ple-consent-checkbox';
+const consentAcceptButton = 'button.ple-submit-button';
 const xButton = '.modal-container--modal--close'
 const validationLocator = '[data-testid$="-error"]';
 const registerValidationsLocator = '[data-testid$="-error"]';

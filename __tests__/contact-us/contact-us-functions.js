@@ -9,11 +9,11 @@ export async function fillContactUsForm(page, input) {
     await contactUsField.fill(input);
 }
 export async function contactUsSubmitButton(page) {
-    const submitButton = page.locator(utils.contactUsWidget).locator('.submit-button');
+    const submitButton = page.locator('.ple-submit-button');
     return submitButton;
 }
 export async function contactUsValidation(page,Validation) {
-     const validationLocator = page.locator(utils.contactUsWidget).locator(`p.error-message:has-text("${Validation}")`);
+     const validationLocator = page.locator(utils.contactUsWidget).locator(`.ple-error-message:has-text("${Validation}")`);
         await expect(validationLocator).toHaveText(Validation);
 }
 export async function clickOnXButton(page) {
