@@ -9,7 +9,7 @@ const config = {
     testDir: '/home/orians/taboo/__tests__',
     projects: [
         {
-            name: 'chromium-project',
+            name: 'Taboo-project',
             use:
             {
                browserName: 'chromium'

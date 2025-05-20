@@ -28,7 +28,7 @@ jobs:
         run: rm -rf ./allure-results/*
 
       - name: Run Playwright tests with Allure reporter
-        run: npx playwright test --reporter=line,allure-playwright
+        run: npx playwright test --config=taboo/playwright.config.js --reporter=line,allure-playwright
 
       - name: Install Allure CLI
         run: npm install -g allure-commandline
