@@ -19,7 +19,10 @@ const config = {
             },
         },
     ],
-    reporter: 'html',
+    reporter: [
+        ["html"],
+        ["allure-playwright"]
+    ],
     use: {
         launchOptions: {
             slowMo: 700, 

@@ -34,8 +34,8 @@ const consentHeadLine = `Almost there!`;
 const consentCheckBox = 'button.consent-checkbox';
 const consentAcceptButton = 'button.submit-button';
 const xButton = '.modal-container--modal--close'
-const validationLocator = 'p.error-message';
-const registerValidationsLocator = '.error-message';
+const validationLocator = '[data-testid$="-error"]';
+const registerValidationsLocator = '[data-testid$="-error"]';
 const unMatchedPasswordValidation = 'Passwords do not match'
 export {
     urlEnv,
