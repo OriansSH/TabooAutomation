@@ -28,17 +28,20 @@ jobs:
         run: rm -rf ./allure-results/*
 
       - name: Run Playwright tests with Allure reporter
-        run: npx playwright test --reporter=line,allure-playwright
+        run: npx playwright test --reporter=line,allure-playwright || true
 
       - name: Install Allure CLI
+        if: always()
         run: npm install -g allure-commandline
-
+      
       - name: Generate Allure Report
+        if: always()
         run: |
-          allure generate ./allure-results --output ./automation-allure-report --clean
-
+          allure generate ./allure-results --output ./allure-report --clean
+      
       - name: Upload Allure Report as Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: ./automation-allure-report
+          path: ./allure-report

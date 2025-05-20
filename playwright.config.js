@@ -1,6 +1,6 @@
 const config = {
     fullyParallel: false,
-    workers: 1,
+    workers: 2,
     testDir: './__tests__',
     use: {
       headless: true,
