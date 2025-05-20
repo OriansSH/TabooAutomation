@@ -2,10 +2,10 @@
   "cookies": [
     {
       "name": "refresh_token",
-      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJicmFuZF9pZCI6MCwiY29uc2VudCI6ZmFsc2UsImV4cCI6MTc1MjkyNDI5MywiaWF0IjoxNzQ3NzQwMjkzLCJpZCI6IjE1IiwiaXNzIjoiaHR0cHM6Ly9kZXYtY21zLnBsYWVlLmRldiIsIm5iZiI6MTc0Nzc0MDI5Mywic3ViIjpudWxsLCJ0cCI6IkN1c3RvbWVyIiwidXNlcmdlbmVyYXRlZCI6ZmFsc2V9.InM9RQn5HF0Q2baYc6H75Mc1CLv5GpFwy0wjRmrY-tM",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJicmFuZF9pZCI6MCwiY29uc2VudCI6ZmFsc2UsImV4cCI6MTc1MjkyNzE2NiwiaWF0IjoxNzQ3NzQzMTY2LCJpZCI6IjE1IiwiaXNzIjoiaHR0cHM6Ly9kZXYtY21zLnBsYWVlLmRldiIsIm5iZiI6MTc0Nzc0MzE2Niwic3ViIjpudWxsLCJ0cCI6IkN1c3RvbWVyIiwidXNlcmdlbmVyYXRlZCI6ZmFsc2V9.Z8VYEgtKnXJM_TUf9-uOhNB2NSpUjgMjOY24Pu_e6I8",
       "domain": ".plaee.dev",
       "path": "/",
-      "expires": 1747826693.527616,
+      "expires": 1747829566.561106,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
@@ -25,7 +25,7 @@
         },
         {
           "name": "profile",
-          "value": "{\"id\":2,\"firstName\":\"Test\",\"lastName\":\"Test\",\"gender\":null,\"email\":\"orianautomation@gmail.com\",\"brandId\":1,\"countryId\":226,\"city\":\"test\",\"address\":\"test\",\"stateId\":2,\"zipCode\":\"55523\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJicmFuZF9pZCI6MSwiY29uc2VudCI6dHJ1ZSwiZXhwIjoxNzQ3NzQ3NDkzLCJpYXQiOjE3NDc3NDAyOTMsImlkIjoiMTUiLCJpc3MiOiJodHRwczovL2Rldi1jbXMucGxhZWUuZGV2IiwibmJmIjoxNzQ3NzQwMjkzLCJzdWIiOm51bGwsInRwIjoiQ3VzdG9tZXIiLCJ1c2VyZ2VuZXJhdGVkIjpmYWxzZX0.sDYe3QtcCNGLq_OvWQI3XvQaLotFJ9JuUBnIrqs2oho\",\"sessionTime\":900,\"clientIp\":null,\"smsCode\":null,\"verifiedStatus\":{\"id\":1,\"code\":\"none\",\"name\":\"None\"}}"
+          "value": "{\"id\":2,\"firstName\":\"Test\",\"lastName\":\"Test\",\"gender\":null,\"email\":\"orianautomation@gmail.com\",\"brandId\":1,\"countryId\":226,\"city\":\"test\",\"address\":\"test\",\"stateId\":2,\"zipCode\":\"55523\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJicmFuZF9pZCI6MSwiY29uc2VudCI6dHJ1ZSwiZXhwIjoxNzQ3NzUwMzY2LCJpYXQiOjE3NDc3NDMxNjYsImlkIjoiMTUiLCJpc3MiOiJodHRwczovL2Rldi1jbXMucGxhZWUuZGV2IiwibmJmIjoxNzQ3NzQzMTY2LCJzdWIiOm51bGwsInRwIjoiQ3VzdG9tZXIiLCJ1c2VyZ2VuZXJhdGVkIjpmYWxzZX0.3YuL8PO6wmataOenehh-wvTTzvNogNQzdYYtWjNjLYE\",\"sessionTime\":900,\"clientIp\":null,\"smsCode\":null,\"verifiedStatus\":{\"id\":1,\"code\":\"none\",\"name\":\"None\"}}"
         },
         {
           "name": "gamesList",
@@ -33,11 +33,11 @@
         },
         {
           "name": "customerData",
-          "value": "{\"consent\":true,\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJicmFuZF9pZCI6MSwiY29uc2VudCI6dHJ1ZSwiZXhwIjoxNzQ3NzQ3NDkzLCJpYXQiOjE3NDc3NDAyOTMsImlkIjoiMTUiLCJpc3MiOiJodHRwczovL2Rldi1jbXMucGxhZWUuZGV2IiwibmJmIjoxNzQ3NzQwMjkzLCJzdWIiOm51bGwsInRwIjoiQ3VzdG9tZXIiLCJ1c2VyZ2VuZXJhdGVkIjpmYWxzZX0.sDYe3QtcCNGLq_OvWQI3XvQaLotFJ9JuUBnIrqs2oho\",\"user\":{\"id\":15,\"firstName\":\"Orian\",\"lastName\":\"Test\",\"email\":\"orianautomation@gmail.com\",\"ssoType\":\"\",\"ssoId\":\"\",\"biggerThan18\":1,\"agreeAllMarketing\":1,\"agreeTerms\":1,\"createdAt\":\"2025-05-13T08:04:00Z\"}}"
+          "value": "{\"consent\":true,\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJicmFuZF9pZCI6MSwiY29uc2VudCI6dHJ1ZSwiZXhwIjoxNzQ3NzUwMzY2LCJpYXQiOjE3NDc3NDMxNjYsImlkIjoiMTUiLCJpc3MiOiJodHRwczovL2Rldi1jbXMucGxhZWUuZGV2IiwibmJmIjoxNzQ3NzQzMTY2LCJzdWIiOm51bGwsInRwIjoiQ3VzdG9tZXIiLCJ1c2VyZ2VuZXJhdGVkIjpmYWxzZX0.3YuL8PO6wmataOenehh-wvTTzvNogNQzdYYtWjNjLYE\",\"user\":{\"id\":15,\"firstName\":\"Orian\",\"lastName\":\"Test\",\"email\":\"orianautomation@gmail.com\",\"ssoType\":\"\",\"ssoId\":\"\",\"biggerThan18\":1,\"agreeAllMarketing\":1,\"agreeTerms\":1,\"createdAt\":\"2025-05-13T08:04:00Z\"}}"
         },
         {
           "name": "accessToken",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJicmFuZF9pZCI6MSwiY29uc2VudCI6dHJ1ZSwiZXhwIjoxNzQ3NzQ3NDkzLCJpYXQiOjE3NDc3NDAyOTMsImlkIjoiMTUiLCJpc3MiOiJodHRwczovL2Rldi1jbXMucGxhZWUuZGV2IiwibmJmIjoxNzQ3NzQwMjkzLCJzdWIiOm51bGwsInRwIjoiQ3VzdG9tZXIiLCJ1c2VyZ2VuZXJhdGVkIjpmYWxzZX0.sDYe3QtcCNGLq_OvWQI3XvQaLotFJ9JuUBnIrqs2oho"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJicmFuZF9pZCI6MSwiY29uc2VudCI6dHJ1ZSwiZXhwIjoxNzQ3NzUwMzY2LCJpYXQiOjE3NDc3NDMxNjYsImlkIjoiMTUiLCJpc3MiOiJodHRwczovL2Rldi1jbXMucGxhZWUuZGV2IiwibmJmIjoxNzQ3NzQzMTY2LCJzdWIiOm51bGwsInRwIjoiQ3VzdG9tZXIiLCJ1c2VyZ2VuZXJhdGVkIjpmYWxzZX0.3YuL8PO6wmataOenehh-wvTTzvNogNQzdYYtWjNjLYE"
         },
         {
           "name": "customerAccounts",
@@ -49,7 +49,7 @@
         },
         {
           "name": "refreshTokenTTL",
-          "value": "2025-05-20T11:34:53.528Z"
+          "value": "2025-05-20T12:22:46.564Z"
         }
       ]
     }

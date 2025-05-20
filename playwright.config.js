@@ -6,7 +6,7 @@
 const config = {
     fullyParallel: false,
     workers: 1,
-    testDir: '/home/orians/taboo/__tests__',
+    testDir: './__tests__',
     projects: [
         {
             name: 'Taboo-project',
