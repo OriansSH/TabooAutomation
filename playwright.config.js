@@ -1,5 +1,3 @@
-// eslint.config.js
-// @ts-check
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -11,7 +9,7 @@ const config = {
     testDir: '/home/orians/taboo/__tests__',
     projects: [
         {
-            name: 'chromium-project',
+            name: 'Taboo-project',
             use:
             {
                browserName: 'chromium'
@@ -26,12 +24,13 @@ const config = {
     use: {
         launchOptions: {
             slowMo: 700, 
-            args: ["--start-maximized"]
+            args: 
+                ['--window-size=1920,1080'],
         },
         headless: false, 
         screenshot: 'on',
         video: 'on', 
-        viewport: null 
+        viewport: { width: 1920, height: 1080 }, 
     },
 };
 export default config;
