@@ -1,36 +1,29 @@
-
-/**
- * @see https://playwright.dev/docs/test-configuration
- * @type {import('@playwright/test').PlaywrightTestConfig}
- */
 const config = {
     fullyParallel: false,
-    workers: 1,
-    testDir: '/home/orians/taboo/__tests__',
+    workers: 2,
+    testDir: './__tests__',
+    use: {
+      headless: true,
+      launchOptions: {
+        slowMo: 700,
+        args: ['--window-size=1920,1080'],
+      },
+      screenshot: 'on',
+      video: 'on',
+      viewport: { width: 1920, height: 1080 },
+      browserName: 'chromium',
+      channel: 'chrome',
+    },
     projects: [
-        {
-            name: 'Taboo-project',
-            use:
-            {
-               browserName: 'chromium'
-                , channel: 'chrome'
-            },
-        },
+      {
+        name: 'Taboo-project',
+      },
     ],
     reporter: [
-        ["html"],
-        ["allure-playwright"]
+      ['html'],
+      ['allure-playwright'],
     ],
-    use: {
-        launchOptions: {
-            slowMo: 700, 
-            args: 
-                ['--window-size=1920,1080'],
-        },
-        headless: false, 
-        screenshot: 'on',
-        video: 'on', 
-        viewport: { width: 1920, height: 1080 }, 
-    },
-};
-export default config;
+  };
+  
+  export default config;
+  
