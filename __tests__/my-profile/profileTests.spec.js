@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { execSync } from 'child_process';
 import * as utils from '../utils.js';
 import { GeneralPage } from "../GeneralPage.js";
-import { ProfilePage } from "./profile.page.js";
+import { ProfilePage } from "./profilePage.js";
 import { profile } from "console";
 
 
