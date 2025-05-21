@@ -2,7 +2,8 @@ name: Daily Playwright Tests
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
+    - cron: '0 4 * * *'   # 7:00 AM IL (UTC+3)
+    - cron: '0 16 * * *'  # 7:00 PM IL (UTC+3)
   workflow_dispatch:
 
 jobs:
