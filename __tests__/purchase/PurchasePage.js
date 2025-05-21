@@ -9,7 +9,7 @@ export class Purchase {
         this.toggleGold = page.locator(utils.toggleGoldButton);
         this.toggleSecret = page.locator(utils.toggleSecretButton);
         this.xButton = page.locator(utils.xButton);
-        this.packageLocator = page.locator('div').filter({ hasText: /^100kGOLD COINS\+157Secret Coins\$1$/ }).getByRole('button');
+        this.packageLocator = page.locator('div').filter({ hasText: /^500kGOLD COINS\+550Secret Coins\$500$/ }).getByRole('button');
     }
 
 
