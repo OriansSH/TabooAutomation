@@ -3,10 +3,8 @@ import * as generalFunctions from '../general-functions';
 import * as myProfileFunctions from './my-profile-functions';
 import * as utils from '../utils.js';
 import { execSync } from 'child_process';
-import { Purchase } from '../purchase/PurchasePage.js';
 
 test.describe('My Profile Tests', () => {
-    let purchase;
 
     test.beforeAll(() => {
         execSync('node __tests__/setup/login.setup.js', { stdio: 'inherit' });
@@ -17,7 +15,6 @@ test.describe('My Profile Tests', () => {
     test.beforeEach(async ({ page }) => {
 
         await page.goto(utils.urlEnv);
-        purchase = new Purchase(page);
     });
 
     test('Taboo > My Profile > Edit profile > All Fileds are Disabled by default', async ({ page }) => {

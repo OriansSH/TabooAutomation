@@ -44,4 +44,8 @@ export class LoginPage {
         const locator = this.loginWidget.locator(`${utils.registerValidationsLocator}:has-text("${expectedText}")`);
         await expect(locator).toHaveText(expectedText);
     }
+    async loginGeneralErrorMessage(expectedText) {
+        const locator = this.loginWidget.locator(`${utils.generalErrorLocator}:has-text("${expectedText}")`);
+        await expect(locator).toHaveText(expectedText);
+    }
 }
