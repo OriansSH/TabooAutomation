@@ -37,6 +37,7 @@ const xButton = '.modal-container--modal--close'
 const validationLocator = '[data-testid$="-error"]';
 const registerValidationsLocator = '[data-testid$="-error"]';
 const unMatchedPasswordValidation = 'Passwords do not match'
+const generalErrorLocator = '.ple-error-message';
 export {
     urlEnv,
     wrongCredentialsValidation,
@@ -75,4 +76,5 @@ export {
     toggleGoldButton,
     toggleSecretButton,
     xButton,
+    generalErrorLocator,
 };

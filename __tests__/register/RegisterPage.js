@@ -77,4 +77,8 @@ export class RegisterPage {
         const validationLocator = this.registerWidget.locator(`${utils.registerValidationsLocator}:has-text("${expectedMessage}")`);
         await expect(validationLocator).toHaveText(expectedMessage);
     }
+    async registerGeneralErrorMessage(expectedMessage) {
+        const validationLocator = this.registerWidget.locator(`${utils.generalErrorLocator}:has-text("${expectedMessage}")`);
+        await expect(validationLocator).toHaveText(expectedMessage);
+    }
 }

@@ -63,7 +63,7 @@ test.describe('Taboo > Register Widget > Validations Tests', () => {
         await registerPage.hardCodedRegister();
         await registerPage.fillEmail(utils.testUserEmail);
         await registerPage.clickCreateAccountButton();
-        await registerPage.passwordAndExpectValidation(utils.duplicateEmailValidation);
+        await registerPage.registerGeneralErrorMessage(utils.duplicateEmailValidation);
     });
 
 });

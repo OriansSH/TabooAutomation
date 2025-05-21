@@ -54,7 +54,7 @@ test.describe('Taboo > Login Widget >  Validations Tests', () => {
         await loginPage.fillEmail(utils.testUserEmail);
         await loginPage.fillPassword(utils.wrongPassword);
         await loginPage.clickLoginButton();
-        await loginPage.expectGeneralError(utils.wrongCredentialsValidation);
+        await loginPage.loginGeneralErrorMessage(utils.wrongCredentialsValidation);
     });
     test('Taboo > Login Widget > Password Field > Special Char Validation', async ({ page }) => {
         await loginPage.fillEmail(utils.testUserEmail);
