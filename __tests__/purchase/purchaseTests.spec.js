@@ -18,20 +18,46 @@ test.describe('Purchase Tests', () => {
         await page.goto(utils.urlEnv);
         purchase = new Purchase(page);
     });
-    test('TEST > Taboo > Logged In Customer > Change Coins From Gold To Secret Coins', async ({ page }) => {
+    test('Taboo > Logged In Customer > Change Coins From Gold To Secret Coins', async ({ page }) => {
         await purchase.toggleGoldButton();
     });
-    test('TEST > Taboo > Logged In Customer > Change Coins From Secret To Gold Coins', async ({ page }) => {
+    test('Taboo > Logged In Customer > Change Coins From Secret To Gold Coins', async ({ page }) => {
         await purchase.toggleGoldButton();
         await purchase.toggleSecretButton();
     });
-    test('TEST > Taboo > Logged In Customer > Gold Coins >  Open Store widget and select Package', async ({ page }) => {
+    test('Taboo > Logged In Customer > Gold Coins >  Open Store widget and select Package', async ({ page }) => {
         await purchase.clickOnPurchaseGoldButton();
         await purchase.selectPackage();
     });
-    test('TEST > Taboo > Logged In Customer > Secret Coins >  Open Store widget and select Package', async ({ page }) => {
+    test('Taboo > Logged In Customer > Secret Coins >  Open Store widget and select Package', async ({ page }) => {
         await purchase.toggleGoldButton();
         await purchase.clickOnPurchaseSecretButton();
         await purchase.selectPackage();
+    });
+    test('Taboo > Logged In Customer > Checkout page > Add Coupon Code', async ({ page }) => {
+        await purchase.clickOnPurchaseGoldButton();
+        await purchase.selectPackage();
+        await purchase.fillCouponCode('Test');
+        await purchase.clickOnCouponButton();
+        await purchase.verifyOldPriceVisible();
+    });
+    test('Taboo > Logged In Customer > Checkout page > Purchase with Coupon Code', async ({ page }) => {
+        await purchase.clickOnPurchaseGoldButton();
+        await purchase.selectPackage();
+        await purchase.fillCouponCode('Test');
+        await purchase.clickOnCouponButton();
+        await purchase.verifyOldPriceVisible();
+        await purchase.clickOnCheckoutPurchaseButton();
+    });
+    test('Taboo > Logged In Customer > Checkout page > Purchase without Coupon code', async ({ page }) => {
+        await purchase.clickOnPurchaseGoldButton();
+        await purchase.selectPackage();
+        await purchase.clickOnCheckoutPurchaseButton();
+    });
+    test('Taboo > Logged In Customer > Checkout page > coupon Field > Empty Field Validation', async ({ page }) => {
+        await purchase.clickOnPurchaseGoldButton();
+        await purchase.selectPackage();
+        await purchase.clickOnCouponButton();
+        await purchase.verifyGeneralErrorVisible();
     });
 });
