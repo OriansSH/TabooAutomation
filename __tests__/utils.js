@@ -39,6 +39,13 @@ const registerValidationsLocator = '[data-testid$="-error"]';
 const unMatchedPasswordValidation = 'Passwords do not match'
 const generalErrorLocator = '.ple-error-message';
 const myProfileLocator = '.side-menu-container--menu--table--entry.my_profile-option';
+const couponPlaceholder = 'Coupon code';
+const couponCodeButton = 'button.ple-coupon-code-button';
+const packageOldPriceClass = '.ple-old-price';
+const checkoutPurchaseButton = 'button.ple-submit-button';
+// Need to change the validation. Currently its defaulte validation.
+const couponEmptyGeneraError = 'Required'
+
 export {
     urlEnv,
     wrongCredentialsValidation,
@@ -79,4 +86,9 @@ export {
     xButton,
     generalErrorLocator,
     myProfileLocator,
+    couponPlaceholder,
+    couponCodeButton,
+    packageOldPriceClass,
+    checkoutPurchaseButton,
+    couponEmptyGeneraError,
 };
