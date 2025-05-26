@@ -18,24 +18,20 @@ test.describe('Purchase Tests', () => {
         await page.goto(utils.urlEnv);
         purchase = new Purchase(page);
     });
-    // Future Test for Purchase process
-    test('Taboo > LoggedIn Customer > Click on Purchase Button', async ({ page }) => {
-        const purchaseGoldButton = page.locator(utils.purchaseGoldButton);
-        await purchaseGoldButton.click();
-        await generalFunctions.clickOnXButton(page);
-        const toggleGoldButton = page.locator(utils.toggleGoldButton);
-        await toggleGoldButton.click();
-        const purchaseSecretButton = page.locator(utils.purchaseSecretButton);
-        await purchaseSecretButton.click();
+    test('TEST > Taboo > Logged In Customer > Change Coins From Gold To Secret Coins', async ({ page }) => {
+        await purchase.toggleGoldButton();
     });
-
-    test('TEST > Taboo > Logged In Customer > Click on Purchase Button TEST', async ({ page }) => {
-        // await page.pause();
+    test('TEST > Taboo > Logged In Customer > Change Coins From Secret To Gold Coins', async ({ page }) => {
+        await purchase.toggleGoldButton();
+        await purchase.toggleSecretButton();
+    });
+    test('TEST > Taboo > Logged In Customer > Gold Coins >  Open Store widget and select Package', async ({ page }) => {
         await purchase.clickOnPurchaseGoldButton();
-        await purchase.clickOnXButton()
+        await purchase.selectPackage();
+    });
+    test('TEST > Taboo > Logged In Customer > Secret Coins >  Open Store widget and select Package', async ({ page }) => {
         await purchase.toggleGoldButton();
         await purchase.clickOnPurchaseSecretButton();
         await purchase.selectPackage();
-
     });
 });
