@@ -28,8 +28,24 @@ jobs:
       - name: Clear previous Allure results
         run: rm -rf ./allure-results/*
 
-      - name: Run Playwright tests with Allure reporter
-        run: npx playwright test --reporter=line,allure-playwright || true
+      - name: Run Playwright tests with JSON reporter
+        run: |
+          npx playwright test --reporter=json --output=playwright-report.json || true
+
+      - name: Parse Playwright JSON results
+        id: parse_results
+        run: |
+          node <<EOF
+          const fs = require('fs');
+          const report = JSON.parse(fs.readFileSync('playwright-report.json', 'utf-8'));
+          const results = report.suites.flatMap(suite => suite.tests);
+          const total = results.length;
+          const passed = results.filter(t => t.status === 'passed').length;
+          const failed = results.filter(t => t.status === 'failed').length;
+          console.log(`::set-output name=total::${total}`);
+          console.log(`::set-output name=passed::${passed}`);
+          console.log(`::set-output name=failed::${failed}`);
+          EOF
 
       - name: Install Allure CLI
         if: always()
@@ -37,8 +53,7 @@ jobs:
       
       - name: Generate Allure Report
         if: always()
-        run: |
-          allure generate ./allure-results --output ./allure-report --clean
+        run: allure generate ./allure-results --output ./allure-report --clean
       
       - name: Upload Allure Report as Artifact
         if: always()
@@ -46,6 +61,7 @@ jobs:
         with:
           name: allure-report
           path: ./allure-report
+
       - name: Send Slack Notification
         if: always()
         uses: rtCamp/action-slack-notify@v2
@@ -53,9 +69,12 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_USERNAME: PlaywrightBot
           SLACK_ICON_EMOJI: ':robot_face:'
-          SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
+          SLACK_COLOR: ${{ steps.parse_results.outputs.failed == '0' && 'good' || 'danger' }}
           SLACK_MESSAGE: |
-            *Daily Playwright Tests:* `${{ job.status }}`  
-            - Triggered by: `${{ github.actor }}`
-            - Branch: `${{ github.ref_name }}`
-            - [View Logs and Download Allure Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            *Daily Playwright Tests Result*  
+            Total tests: ${{ steps.parse_results.outputs.total }}  
+            Passed: ${{ steps.parse_results.outputs.passed }}  
+            Failed: ${{ steps.parse_results.outputs.failed }}  
+            Triggered by: ${{ github.actor }}  
+            Branch: ${{ github.ref_name }}  
+            [View Logs and Download Allure Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
