@@ -42,3 +42,17 @@ jobs:
         with:
           name: allure-report-register
           path: ./allure-report
+
+      - name: Send Slack Notification
+        if: always()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_USERNAME: PlaywrightBot
+          SLACK_ICON_EMOJI: ':robot_face:'
+          SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
+          SLACK_MESSAGE: |
+            *Register Tests:* `${{ job.status }}`  
+            - Triggered by: `${{ github.actor }}`
+            - Branch: `${{ github.ref_name }}`
+            - [View Logs and Download Allure Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
