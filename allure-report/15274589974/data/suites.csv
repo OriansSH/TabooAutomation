@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3952","Taboo > Contact us > Click on X Button to close the Form","Taboo-project","Tue May 27 11:58:27 UTC 2025","passed","Tue May 27 11:58:31 UTC 2025","My Profile Tests","contact-us/contact-usTests.spec.js","",""
+"","3960","Taboo > Contact us > Empty Message Validation","Taboo-project","Tue May 27 11:58:23 UTC 2025","passed","Tue May 27 11:58:27 UTC 2025","My Profile Tests","contact-us/contact-usTests.spec.js","",""
+"","5488","Taboo > Contact us > My Profile Widget > Send message to support via My Profile Widget","Taboo-project","Tue May 27 11:58:31 UTC 2025","passed","Tue May 27 11:58:37 UTC 2025","My Profile Tests","contact-us/contact-usTests.spec.js","",""
+"","6724","Taboo > Contact us > Send message to support","Taboo-project","Tue May 27 11:58:06 UTC 2025","passed","Tue May 27 11:58:13 UTC 2025","My Profile Tests","contact-us/contact-usTests.spec.js","",""
