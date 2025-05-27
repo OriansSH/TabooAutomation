@@ -45,6 +45,11 @@ const packageOldPriceClass = '.ple-old-price';
 const checkoutPurchaseButton = 'button.ple-submit-button';
 // Need to change the validation. Currently its defaulte validation.
 const couponEmptyGeneraError = 'Required'
+const contactUsLocator = '.side-menu-container--menu--table--entry.contact-option';
+const contactUsMessageId = '#message';
+const contactUsSubmitButton = 'button.ple-submit-button';
+const supportButtonViaProfile = 'button.ple-button-outline:has-text("Support")';
+
 
 export {
     urlEnv,
@@ -91,4 +96,8 @@ export {
     packageOldPriceClass,
     checkoutPurchaseButton,
     couponEmptyGeneraError,
+    contactUsLocator,
+    contactUsMessageId,
+    contactUsSubmitButton,
+    supportButtonViaProfile,
 };

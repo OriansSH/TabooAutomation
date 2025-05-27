@@ -26,7 +26,7 @@ jobs:
         run: rm -rf ./allure-results/*
 
       - name: Run Contact Us Test with Allure reporter
-        run: npx playwright test __tests__/contact-us/contact-us-tests.spec.js --reporter=line,allure-playwright || true
+        run: npx playwright test __tests__/contact-us/contact-usTests.spec.js --reporter=line,allure-playwright || true
 
       - name: Install Allure CLI
         if: always()
