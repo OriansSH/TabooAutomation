@@ -3,7 +3,6 @@ import { execSync } from 'child_process';
 import * as utils from '../utils.js';
 import { GeneralPage } from "../GeneralPage.js";
 import { ProfilePage } from "./profilePage.js";
-import { profile } from "console";
 
 
 test.describe('My Profile Tests', () => {
