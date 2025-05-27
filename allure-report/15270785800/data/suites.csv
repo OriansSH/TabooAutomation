@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5371","Taboo > My Profile > Edit profile > All fields are Disabled by default","Taboo-project","Tue May 27 08:48:57 UTC 2025","passed","Tue May 27 08:49:02 UTC 2025","My Profile Tests","my-profile/profileTests.spec.js","",""
+"","5621","Taboo > My Profile > Edit profile > Edit Last Name","Taboo-project","Tue May 27 08:49:20 UTC 2025","passed","Tue May 27 08:49:26 UTC 2025","My Profile Tests","my-profile/profileTests.spec.js","",""
+"","5674","Taboo > My Profile > Edit profile > Edit First Name","Taboo-project","Tue May 27 08:49:15 UTC 2025","passed","Tue May 27 08:49:20 UTC 2025","My Profile Tests","my-profile/profileTests.spec.js","",""
