@@ -36,6 +36,14 @@ jobs:
         if: always()
         run: allure generate ./allure-results --output ./allure-report --clean
 
+      - name: Deploy Allure Report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          destination_dir: allure-report/${{ github.run_id }}
+
       - name: Upload Allure Report as Artifact
         if: always()
         uses: actions/upload-artifact@v4
@@ -55,3 +63,4 @@ jobs:
             - Triggered by: `${{ github.actor }}`
             - Branch: `${{ github.ref_name }}`
             - [View Logs and Download Allure Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - :rocket: [Live Allure Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/allure-report/${{ github.run_id }}/)
