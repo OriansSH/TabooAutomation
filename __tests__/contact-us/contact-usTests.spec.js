@@ -4,7 +4,7 @@ import { execSync } from 'child_process';
 import { ContactUsPage } from "./contactUsPage.js";
 import { GeneralPage } from "../GeneralPage.js";
 
-test.describe('My Profile Tests', () => {
+test.describe('Contact Us Tests', () => {
     let contactus;
     let generalPage;
     test.beforeAll(() => {

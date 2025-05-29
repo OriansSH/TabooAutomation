@@ -49,6 +49,17 @@ const contactUsLocator = '.side-menu-container--menu--table--entry.contact-optio
 const contactUsMessageId = '#message';
 const contactUsSubmitButton = 'button.ple-submit-button';
 const supportButtonViaProfile = 'button.ple-button-outline:has-text("Support")';
+const termsofservice = '.footer--container--wrapper--navigation--option:has-text("Terms of service")';
+const headerTermsOfService = '.info-page--container--content--title:has-text("Terms of service")';
+const sweepsPolicy = '.footer--container--wrapper--navigation--option:has-text("Sweeps policy")';
+const headerSweepPolicy = '.info-page--container--content--title:has-text("Sweepstakes Policy")';
+const inviteFriends = '.footer--container--wrapper--navigation--option:has-text("Invite friends terms of use")';
+const headerInviteFriends = '.info-page--container--content--title:has-text("Invite Friends Terms of use")';
+const privecyPolicy = '.footer--container--wrapper--navigation--option:has-text("Privacy policy")';
+const headerPrivacyPolicy = '.info-page--container--content--title:has-text("Privacy policy")';
+const lobbyRG = '.footer--container--wrapper--info--button:has-text("Go To Responsible Social Gaming")';
+const headerRG = '.info-page--container--content--title:has-text("Responsible Gaming Terms")';
+const signInButtonInRegisterWidget = '.ple-local-link';
 
 
 export {
@@ -100,4 +111,15 @@ export {
     contactUsMessageId,
     contactUsSubmitButton,
     supportButtonViaProfile,
+    termsofservice,
+    sweepsPolicy,
+    headerTermsOfService,
+    headerSweepPolicy,
+    inviteFriends,
+    headerInviteFriends,
+    privecyPolicy,
+    headerPrivacyPolicy,
+    lobbyRG,
+    headerRG,
+    signInButtonInRegisterWidget,
 };

@@ -9,6 +9,7 @@ export class LoginPage {
         this.passwordField = this.loginWidget.locator(utils.passwordField);
         this.loginButton = this.loginWidget.locator(utils.loginButton);
         this.loginXButton = page.locator(utils.loginXButton);
+        this.registerSignInButton = page.locator(utils.signInButtonInRegisterWidget);
 
         this.validationMessage = [
             'Email is required',
@@ -47,5 +48,8 @@ export class LoginPage {
     async loginGeneralErrorMessage(expectedText) {
         const locator = this.loginWidget.locator(`${utils.generalErrorLocator}:has-text("${expectedText}")`);
         await expect(locator).toHaveText(expectedText);
+    }
+    async clickSignInButtonInRegisterWidget() {
+        await this.registerSignInButton.click();
     }
 }
