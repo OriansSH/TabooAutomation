@@ -5,7 +5,7 @@ import { GeneralPage } from "../GeneralPage.js";
 import { ProfilePage } from "./profilePage.js";
 
 
-test.describe('My Profile Tests', () => {
+test.describe('My Profile Tests', (customerEmail = null) => {
     let profilePage;
     let generalPage;
     test.beforeAll(() => {
@@ -27,20 +27,20 @@ test.describe('My Profile Tests', () => {
         await expect(editProfileButton).toBeVisible();
 
     });
-        test('Taboo > My Profile > Edit profile > Edit First Name', async ({ page }) => {
-            await generalPage.openUserMenu();
-            await profilePage.clickOnMyProfileButton();
-            await profilePage.clickOnEditProfileButton();
-            await profilePage.fillMyProfileFields(utils.firstNameField, 'AutomationEditFirst');
-            const saveButton = await profilePage.clickOnSaveChangesButton();
-            await expect(saveButton).toBeHidden();
-        });
-        test('Taboo > My Profile > Edit profile > Edit Last Name', async ({ page }) => {
-            await generalPage.openUserMenu();
-            await profilePage.clickOnMyProfileButton();
-            await profilePage.clickOnEditProfileButton();
-            await profilePage.fillMyProfileFields(utils.lastNameField, 'AutomationEditLast');
-            const saveButton = await profilePage.clickOnSaveChangesButton();
-            await expect(saveButton).toBeHidden();
-        });
+    test('Taboo > My Profile > Edit profile > Edit First Name', async ({ page }) => {
+        await generalPage.openUserMenu();
+        await profilePage.clickOnMyProfileButton();
+        await profilePage.clickOnEditProfileButton();
+        await profilePage.fillMyProfileFields(utils.firstNameField, 'AutomationEditFirst');
+        const saveButton = await profilePage.clickOnSaveChangesButton();
+        await expect(saveButton).toBeHidden();
+    });
+    test('Taboo > My Profile > Edit profile > Edit Last Name', async ({ page }) => {
+        await generalPage.openUserMenu();
+        await profilePage.clickOnMyProfileButton();
+        await profilePage.clickOnEditProfileButton();
+        await profilePage.fillMyProfileFields(utils.lastNameField, 'AutomationEditLast');
+        const saveButton = await profilePage.clickOnSaveChangesButton();
+        await expect(saveButton).toBeHidden();
+    });
 });
