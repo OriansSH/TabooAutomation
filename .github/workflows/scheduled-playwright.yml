@@ -2,9 +2,9 @@ name: Daily Playwright Tests
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # 7:00 AM IL (UTC+3)
-    - cron: '0 11 * * *'   # 7:00 AM IL (UTC+3)
-    - cron: '0 16 * * *'  # 7:00 PM IL (UTC+3)
+    - cron: '0 6 * * *'   # 9:00 AM IL (UTC+3)
+    - cron: '0 11 * * *'   # 14:00 AM IL (UTC+3)
+    - cron: '0 16 * * *'  # 19:00 PM IL (UTC+3)
   workflow_dispatch:
 
 jobs:
