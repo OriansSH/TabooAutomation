@@ -23,6 +23,7 @@ test.describe('Taboo > Register Widget Tests', () => {
         await generalPage.openUserMenu();
     });
     test('Taboo > Register Widget > Customer Register Via Sign Up button in Login Widget', async ({ page }) => {
+        await page.waitForTimeout(2000);
         await generalPage.clickOnXButton();
         await generalPage.openLoginForm();
         await registerPage.clickSignUpButtonInLoginWidget();
