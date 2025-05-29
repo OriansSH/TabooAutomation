@@ -12,7 +12,20 @@ test.describe('Taboo > Register Widget Tests', () => {
         generalPage = new GeneralPage(page);
         await generalPage.openRegisterForm();
     });
-    test('Taboo > Valid Register Process', async ({ page }) => {
+    test('Taboo > Register Widget > Valid Register Process', async ({ page }) => {
+        await registerPage.hardCodedRegister(page);
+        const createAccountButton = await registerPage.clickCreateAccountButton();
+        await expect(createAccountButton).toBeHidden();
+        await registerPage.verifyConsentHeadlineVisible();
+        await registerPage.verifyAcceptButtonState(false);
+        await registerPage.clickConsentCheckboxes();
+        await registerPage.verifyAcceptButtonState(true);
+        await generalPage.openUserMenu();
+    });
+    test('Taboo > Register Widget > Customer Register Via Sign Up button in Login Widget', async ({ page }) => {
+        await generalPage.clickOnXButton();
+        await generalPage.openLoginForm();
+        await registerPage.clickSignUpButtonInLoginWidget();
         await registerPage.hardCodedRegister(page);
         const createAccountButton = await registerPage.clickCreateAccountButton();
         await expect(createAccountButton).toBeHidden();

@@ -8,7 +8,6 @@ export class LoginPage {
         this.emailField = this.loginWidget.locator(utils.emailField);
         this.passwordField = this.loginWidget.locator(utils.passwordField);
         this.loginButton = this.loginWidget.locator(utils.loginButton);
-        this.loginXButton = page.locator(utils.loginXButton);
         this.registerSignInButton = page.locator(utils.signInButtonInRegisterWidget);
 
         this.validationMessage = [
@@ -25,9 +24,6 @@ export class LoginPage {
     async clickLoginButton() {
         await this.loginButton.click();
         return this.loginButton;
-    }
-    async clickLoginXButton() {
-        await this.loginXButton.click();
     }
     async login(email, password) {
         await this.fillEmail(email);
