@@ -14,6 +14,7 @@ export class RegisterPage {
         this.consentHeadLine = page.locator(`text=${utils.consentHeadLine}`);
         this.consentCheckBox = page.locator(utils.consentCheckBox);
         this.consentAcceptButton = page.locator(utils.consentAcceptButton);
+        this.registerSignInButton = page.locator(utils.signInButtonInRegisterWidget);
     }
     async verifyConsentHeadlineVisible() {
         await expect(this.consentHeadLine).toBeVisible();
@@ -80,5 +81,8 @@ export class RegisterPage {
     async registerGeneralErrorMessage(expectedMessage) {
         const validationLocator = this.registerWidget.locator(`${utils.generalErrorLocator}:has-text("${expectedMessage}")`);
         await expect(validationLocator).toHaveText(expectedMessage);
+    }
+    async clickSignUpButtonInLoginWidget() {
+        await this.registerSignInButton.click();
     }
 }

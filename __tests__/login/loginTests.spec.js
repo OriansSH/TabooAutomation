@@ -21,7 +21,7 @@ test.describe('Taboo > Login Widget Tests', () => {
         await expect(loginButton).toBeHidden();
     });
     test('Taboo > Login Widgets > Customer Login via Game Image', async ({ page }) => {
-        await loginPage.loginXButton.click();
+        await generalPage.clickOnXButton();
         await generalPage.clickOngameLobby('Play Majestic King');
         await loginPage.fillEmail(utils.testUserEmail);
         await loginPage.fillPassword(utils.testUserPassword);
@@ -29,7 +29,7 @@ test.describe('Taboo > Login Widget Tests', () => {
         await expect(loginButton).toBeHidden();
     });
     test('Taboo > Login Widgets > Customer Login Via Sign In button in Register Widget', async ({ page }) => {
-        await loginPage.loginXButton.click();
+        await generalPage.clickOnXButton();
         await generalPage.openRegisterForm();
         await loginPage.clickSignInButtonInRegisterWidget();
         await loginPage.fillEmail(utils.testUserEmail);

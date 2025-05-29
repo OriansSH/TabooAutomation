@@ -7,6 +7,8 @@ export class GeneralPage {
         this.page = page;
         this.avatarIcon = page.locator(utils.avatarIcon);
         this.logoutButton = page.locator(utils.logOutButton);
+        this.locatorXButton = page.locator(utils.loginXButton);
+
     }
     async openLoginForm() {
         const loginFormTrigger = this.page.locator('.header--auth--login');
@@ -27,5 +29,8 @@ export class GeneralPage {
     async clickLogoutButton() {
         await this.logoutButton.click();
         await expect(this.logoutButton).toBeHidden();
+    }
+    async clickOnXButton() {
+        await this.locatorXButton.click();
     }
 }
