@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7533","Password Field - Missing Special Character Validation","Taboo-project","Thu May 29 09:49:32 UTC 2025","passed","Thu May 29 09:49:39 UTC 2025","Taboo > Register Widget > Validations Tests","register/registerTests.spec.js","",""
+"","7608","Password Field - UnMatched Password Validation","Taboo-project","Thu May 29 09:49:47 UTC 2025","passed","Thu May 29 09:49:55 UTC 2025","Taboo > Register Widget > Validations Tests","register/registerTests.spec.js","",""
+"","16949","Taboo > Register Widget > Valid Register Process","Taboo-project","Thu May 29 09:48:45 UTC 2025","passed","Thu May 29 09:49:02 UTC 2025","Taboo > Register Widget Tests","register/registerTests.spec.js","",""
+"","7629","Password Field - Missing Number Validation","Taboo-project","Thu May 29 09:49:39 UTC 2025","passed","Thu May 29 09:49:47 UTC 2025","Taboo > Register Widget > Validations Tests","register/registerTests.spec.js","",""
+"","7650","Duplicate Email Validation","Taboo-project","Thu May 29 09:49:55 UTC 2025","passed","Thu May 29 09:50:02 UTC 2025","Taboo > Register Widget > Validations Tests","register/registerTests.spec.js","",""
+"","16571","Taboo > Register Widget > Customer Register Via Sign Up button in Login Widget","Taboo-project","Thu May 29 09:49:11 UTC 2025","failed","Thu May 29 09:49:28 UTC 2025","Taboo > Register Widget Tests","register/registerTests.spec.js","",""
+"","3329","Empty Fields Validation","Taboo-project","Thu May 29 09:49:28 UTC 2025","passed","Thu May 29 09:49:32 UTC 2025","Taboo > Register Widget > Validations Tests","register/registerTests.spec.js","",""
