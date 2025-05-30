@@ -26,10 +26,10 @@ const loginButton = 'button[type="submit"]';
 const loginXButton = '.modal-container--modal--close';
 const logOutButton = '.side-menu-container--menu--table--entry.sign-out';
 const avatarIcon = '.header--actions--avatar';
-const purchaseGoldButton = '.header--funds--add.gold'
-const purchaseSecretButton = '.header--funds--add.secret'
-const toggleGoldButton = '.header--funds--coins--icon.gold'
-const toggleSecretButton = '.header--funds--coins--icon.secret'
+const purchaseGoldButton = '.header--funds--coins--add.gold'
+const purchaseSecretButton = '.header--funds--coins--add.secret'
+const toggleGoldButton = '.header--funds--toggle--icon.gold'
+const toggleSecretButton = '.header--funds--toggle--icon.secret'
 const consentHeadLine = `Almost there!`;
 const consentCheckBox = 'button.ple-consent-checkbox';
 const consentAcceptButton = 'button.ple-submit-button';
@@ -38,14 +38,14 @@ const validationLocator = '[data-testid$="-error"]';
 const registerValidationsLocator = '[data-testid$="-error"]';
 const unMatchedPasswordValidation = 'Passwords do not match'
 const generalErrorLocator = '.ple-error-message';
-const myProfileLocator = '.side-menu-container--menu--table--entry.my_profile-option';
+const myProfileLocator = '.side-menu-container--menu--table--entry.my_profile';
 const couponPlaceholder = 'Coupon code';
 const couponCodeButton = 'button.ple-coupon-code-button';
 const packageOldPriceClass = '.ple-old-price';
 const checkoutPurchaseButton = 'button.ple-submit-button';
 // Need to change the validation. Currently its defaulte validation.
 const couponEmptyGeneraError = 'Required'
-const contactUsLocator = '.side-menu-container--menu--table--entry.contact-option';
+const contactUsLocator = '.side-menu-container--menu--table--entry.contact';
 const contactUsMessageId = '#message';
 const contactUsSubmitButton = 'button.ple-submit-button';
 const supportButtonViaProfile = 'button.ple-button-outline:has-text("Support")';
