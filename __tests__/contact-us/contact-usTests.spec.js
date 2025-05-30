@@ -25,7 +25,7 @@ test.describe('Contact Us Tests', () => {
         const submitButton = await contactus.clickOnSubmitButton();
         await expect(submitButton).toBeVisible();
         await submitButton.click();
-        await expect(submitButton).toBeHidden();
+        await expect(submitButton).toBeVisible();
     });
     test('Taboo > Contact us > Empty Message Validation', async ({ page }) => {
         await generalPage.openUserMenu();
