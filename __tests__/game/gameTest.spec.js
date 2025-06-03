@@ -4,7 +4,7 @@ import * as generalFunctions from '../general-functions.js';
 import { LoginPage } from '../login/LoginPage.js';
 
 // This is first Version of Game Test!!
-test.describe('My Profile Tests', () => {
+test.describe('Lunch Game Tests', () => {
     let loginPage;
 
     test.beforeEach(async ({ page }) => {
