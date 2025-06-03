@@ -16,16 +16,16 @@ test.describe('Lunch Game Tests', () => {
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
         await generalFunctions.clickLoginButton(page);
-        generalFunctions.clickOnGameLobby(page, 'Play Majestic White Rhino')
+        generalFunctions.clickOnGameLobby(page, 'Play Majestic King')
         await page.waitForTimeout(7000);
-        await page.locator('iframe[title="Majestic White Rhino"]').contentFrame().locator('canvas').click({
+        await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
                 x: 830,
-                y: 781
+                y: 789
             },
         });
         await page.waitForTimeout(2000);
-        await page.locator('iframe[title="Majestic White Rhino"]').contentFrame().locator('canvas').click({
+        await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
                 x: 830,
                 y: 781
