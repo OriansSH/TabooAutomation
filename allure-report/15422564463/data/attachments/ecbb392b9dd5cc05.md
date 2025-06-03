@@ -1,0 +1,232 @@
+# Test info
+
+- Name: Purchase Tests >> Taboo > Logged In Customer > Checkout page > Purchase without Coupon code
+- Location: /home/runner/work/TabooAutomation/TabooAutomation/__tests__/purchase/purchaseTests.spec.js:52:5
+
+# Error details
+
+```
+Error: locator.click: Test ended.
+Call log:
+  - waiting for locator('div').filter({ hasText: /^500kGOLD COINS\+550Secret Coins\$500$/ }).getByRole('button')
+
+    at Purchase.selectPackage (/home/runner/work/TabooAutomation/TabooAutomation/__tests__/purchase/PurchasePage.js:39:35)
+    at /home/runner/work/TabooAutomation/TabooAutomation/__tests__/purchase/purchaseTests.spec.js:54:24
+```
+
+# Page snapshot
+
+```yaml
+- text: AA GC 149,997.25
+- img
+- img
+- text: VIP Ranks Widget to be added
+- img
+- text: "AA Automation AutomationEditLast Account id: 819"
+- img
+- text: 149,997.25
+- img
+- text: "149.25"
+- button "Coin 0 BUY":
+  - img "Coin 0"
+  - text: BUY
+- text: Customer progress not found
+- region "Notifications (F8)":
+  - list
+- text: My profile Redeem Funds history Invite a friend Responsible Gaming Terms and policies Terms of service Privacy policy Sweeps policy Responsible Gaming Contact us Sign out
+- img
+- text: Your Journey Begins Here Unlock exclusive rewards with your first step into Taboo Play Come on in
+- img
+- text: Friends Deserve Fortune Invite your Friends and earn Gold coins for every join Send Invite
+- img
+- text: A Golden Opportunity Awaits For 72 hours only — double your Gold coins on every purchase Reveal the Offer
+- img
+- textbox
+- text: All
+- img
+- text: Exclusive
+- img
+- text: New Releases
+- img
+- text: Hot Recommended for you
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- text: All
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- text: Exclusive
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- text: New Releases
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- text: Hot
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- img
+- text: A Golden Opportunity Awaits For 72 hours only — double your Gold coins on every purchase Reveal the Offer
+- img
+- text: "Terms of service Sweeps policy Invite friends terms of use Help center Privacy policy Contact us Support: +1 (123) 555-6218 You are aware and understand that you are providing information to Taboo Casino. The sole use of this information will be to manage this promotion. NO PURCHASE NECESSARY to participate in Sweepstakes. SWEEPSTAKES ARE VOID WHERE PROHIBITED BY LAW. For more information about sweepstakes rules, please refer to Sweeps Policy. Copyright 2023 Sunflower Limited. All right reserved. Go To Responsible Social Gaming Taboo Casino is operated by ''. The sweepstakes promotions and prizes offered at Taboo Casino are operated by ''. All payments are processed by ''. Taboo Casino All rights reserved."
+- img
+- text: Store Get a coin package now
+- region "Notifications (F8)":
+  - list
+- img
+- iframe
+- iframe
+- iframe
+```
+
+# Test source
+
+```ts
+   1 | import { expect } from '@playwright/test';
+   2 | import * as utils from '../utils.js';
+   3 |
+   4 | export class Purchase {
+   5 |     constructor(page) {
+   6 |         this.page = page;
+   7 |         this.purchaseGold = page.locator(utils.purchaseGoldButton);
+   8 |         this.purchaseSecret = page.locator(utils.purchaseSecretButton);
+   9 |         this.toggleGold = page.locator(utils.toggleGoldButton);
+  10 |         this.toggleSecret = page.locator(utils.toggleSecretButton);
+  11 |         this.xButton = page.locator(utils.xButton);
+  12 |         this.packageLocator = page.locator('div').filter({ hasText: /^500kGOLD COINS\+550Secret Coins\$500$/ }).getByRole('button');
+  13 |         this.couponField = page.getByPlaceholder(utils.couponPlaceholder);
+  14 |         this.couponButton = page.locator(utils.couponCodeButton)
+  15 |         this.oldPrice = page.locator(utils.packageOldPriceClass);
+  16 |         this.checkoutPurchaseButton = page.locator(utils.checkoutPurchaseButton);
+  17 |         this.generalErrorLocator = page.locator(utils.generalErrorLocator);
+  18 |
+  19 |     }
+  20 |
+  21 |
+  22 |     async clickOnPurchaseGoldButton() {
+  23 |         await this.purchaseGold.click();
+  24 |         expect(this.purchaseGold).toBeHidden();
+  25 |     }
+  26 |     async clickOnPurchaseSecretButton() {
+  27 |         await this.purchaseSecret.click();
+  28 |     }
+  29 |     async toggleGoldButton() {
+  30 |         await this.toggleGold.click();
+  31 |     }
+  32 |     async toggleSecretButton() {
+  33 |         await this.toggleSecret.click();
+  34 |     }
+  35 |     async clickOnXButton() {
+  36 |         await this.xButton.click();
+  37 |     }
+  38 |     async selectPackage() {
+> 39 |         await this.packageLocator.click();
+     |                                   ^ Error: locator.click: Test ended.
+  40 |     }
+  41 |     async fillCouponCode(couponCode) {
+  42 |         await this.couponField.fill(couponCode);
+  43 |     }
+  44 |     async clickOnCouponButton() {
+  45 |         await this.couponButton.click();
+  46 |         return this.couponButton;
+  47 |     }
+  48 |     async verifyOldPriceVisible() {
+  49 |         await expect(this.oldPrice).toBeVisible();
+  50 |     }
+  51 |     async clickOnCheckoutPurchaseButton() {
+  52 |         await this.checkoutPurchaseButton.click();
+  53 |         return this.checkoutPurchaseButton;
+  54 |     }
+  55 |     async verifyGeneralErrorVisible() {
+  56 |         await expect(this.generalErrorLocator).toHaveText(utils.couponEmptyGeneraError);
+  57 |     }
+  58 | }
+```
