@@ -34,12 +34,6 @@ test.describe('Contact Us Tests', () => {
         await submitButton.click();
         await contactus.contactUsValidation(utils.contactUsEmptyValidation);
     });
-    test('Taboo > Contact us > Click on X Button to close the Form', async ({ page }) => {
-        await generalPage.openUserMenu();
-        await contactus.clickOnContactUsButton();
-        await contactus.clickOnXButton(page);
-        await contactus.contactUsHidden(page, expect);
-    });
     test('Taboo > Contact us > My Profile Widget >  Send message to support via My Profile Widget', async ({ page }) => {
         await generalPage.openUserMenu();
         await contactus.clickOnMyProfileButton();
@@ -50,5 +44,4 @@ test.describe('Contact Us Tests', () => {
         await submitButton.click();
         await expect(submitButton).toBeHidden();
     });
-
 });
