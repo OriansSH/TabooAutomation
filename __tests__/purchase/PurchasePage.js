@@ -15,7 +15,7 @@ export class Purchase {
         this.oldPrice = page.locator(utils.packageOldPriceClass);
         this.checkoutPurchaseButton = page.locator(utils.checkoutPurchaseButton);
         this.generalErrorLocator = page.locator(utils.generalErrorLocator);
-
+        this.buyIconLocator = page.locator(utils.buyIcon);
     }
 
 
@@ -54,5 +54,14 @@ export class Purchase {
     }
     async verifyGeneralErrorVisible() {
         await expect(this.generalErrorLocator).toHaveText(utils.couponEmptyGeneraError);
+    }
+    async clickOnBuyIcon() {
+        await this.buyIconLocator.click();
+        return this.buyIconLocator;
+    }
+    async verifyStoreWidget() {
+        const storeWidget = this.page.locator('.ple-title');
+        await expect(storeWidget).toHaveText('Store');
+        await expect(storeWidget).toBeVisible();
     }
 }
