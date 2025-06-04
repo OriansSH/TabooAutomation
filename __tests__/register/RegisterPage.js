@@ -53,10 +53,10 @@ export class RegisterPage {
         await this.createAccountButton.click();
         return this.createAccountButton;
     }
-    async hardCodedRegister() {
+    async hardCodedRegister(email) {
         await this.fillFirstName('Automation');
         await this.filllLastName('User');
-        await this.fillEmail(utils.uniqueEmail);
+        await this.fillEmail(email);
         await this.fillPassword(utils.testUserPassword);
         await this.fillConfirmPassword(utils.testUserPassword);
         console.log('Registering Email:', utils.uniqueEmail);

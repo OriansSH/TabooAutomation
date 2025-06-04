@@ -1,6 +1,11 @@
 const timestamp = Date.now();
 const uniqueEmail = `test${timestamp}@gmail.com`;
 
+export function generateUniqueEmail() {
+    const timestamp = Date.now();
+    return `test${timestamp}@gmail.com`;
+}
+
 const loginWidget = 'pce-log-in';
 const registerWidget = 'pce-register';
 const myProfileWidget = 'pce-my-profile';
