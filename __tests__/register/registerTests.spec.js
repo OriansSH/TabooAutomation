@@ -13,7 +13,8 @@ test.describe('Taboo > Register Widget Tests', () => {
         await generalPage.openRegisterForm();
     });
     test('Taboo > Register Widget > Valid Register Process', async ({ page }) => {
-        await registerPage.hardCodedRegister(page);
+        const email = utils.generateUniqueEmail();
+        await registerPage.hardCodedRegister(email);
         const createAccountButton = await registerPage.clickCreateAccountButton();
         await expect(createAccountButton).toBeHidden();
         await registerPage.verifyConsentHeadlineVisible();
@@ -23,11 +24,11 @@ test.describe('Taboo > Register Widget Tests', () => {
         await generalPage.openUserMenu();
     });
     test('Taboo > Register Widget > Customer Register Via Sign Up button in Login Widget', async ({ page }) => {
-        await page.waitForTimeout(2000);
+        const email = utils.generateUniqueEmail();
         await generalPage.clickOnXButton();
         await generalPage.openLoginForm();
         await registerPage.clickSignUpButtonInLoginWidget();
-        await registerPage.hardCodedRegister(page);
+        await registerPage.hardCodedRegister(email);
         const createAccountButton = await registerPage.clickCreateAccountButton();
         await expect(createAccountButton).toBeHidden();
         await registerPage.verifyConsentHeadlineVisible();
@@ -54,27 +55,31 @@ test.describe('Taboo > Register Widget > Validations Tests', () => {
     });
 
     test('Password Field - Missing Special Character Validation', async () => {
-        await registerPage.hardCodedRegister();
+        const email = utils.generateUniqueEmail();
+        await registerPage.hardCodedRegister(email);
         await registerPage.fillPassword(utils.specialPassword);
         await registerPage.clickCreateAccountButton();
         await registerPage.passwordAndExpectValidation(utils.specialCharValidation);
     });
 
     test('Password Field - Missing Number Validation', async () => {
-        await registerPage.hardCodedRegister();
+        const email = utils.generateUniqueEmail();
+        await registerPage.hardCodedRegister(email);
         await registerPage.fillPassword(utils.oneDigitPassword);
         await registerPage.clickCreateAccountButton();
         await registerPage.passwordAndExpectValidation(utils.oneDigitValidation);
     });
     test('Password Field - UnMatched Password Validation', async () => {
-        await registerPage.hardCodedRegister();
+        const email = utils.generateUniqueEmail();
+        await registerPage.hardCodedRegister(email);
         await registerPage.fillConfirmPassword(utils.unMatchedPaswword);
         await registerPage.clickCreateAccountButton();
         await registerPage.passwordAndExpectValidation(utils.unMatchedPasswordValidation);
     });
 
     test('Duplicate Email Validation', async () => {
-        await registerPage.hardCodedRegister();
+        const email = utils.generateUniqueEmail();
+        await registerPage.hardCodedRegister(email);
         await registerPage.fillEmail(utils.testUserEmail);
         await registerPage.clickCreateAccountButton();
         await registerPage.registerGeneralErrorMessage(utils.duplicateEmailValidation);
