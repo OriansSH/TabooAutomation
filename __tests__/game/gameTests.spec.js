@@ -30,7 +30,7 @@ test.describe('Launch Game Tests', () => {
                 y: 789
             },
         });
-        await page.waitForTimeout(3000);
+        await page.waitForTimeout(5000);
         await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
                 x: 830,
