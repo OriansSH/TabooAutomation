@@ -29,7 +29,7 @@ jobs:
       - name: Clear previous Allure results
         run: rm -rf ./allure-results/*
 
-      - name: Run Playwright tests with Allure reporter
+      - name: Run Automation tests with Allure reporter
         run: npx playwright test --reporter=line,allure-playwright || true
 
       - name: Install Allure CLI

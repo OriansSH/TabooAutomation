@@ -25,7 +25,7 @@ jobs:
       - name: Clear previous Allure results
         run: rm -rf ./allure-results/*
 
-      - name: Run Contact Us Test with Allure reporter
+      - name: Run Purchase Test with Allure reporter
         run: npx playwright test __tests__/purchase/purchaseTests.spec.js --reporter=line,allure-playwright || true
 
       - name: Install Allure CLI
