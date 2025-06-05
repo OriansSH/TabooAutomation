@@ -33,4 +33,12 @@ export class GeneralPage {
     async clickOnXButton() {
         await this.locatorXButton.click();
     }
+    async  clickOnGameLobby(gameName) {
+        const game = this.page.getByRole('button', { name: gameName }).nth(0);
+        await game.click();
+    }
+    async closeGameIframe() {
+        const xButton = this.page.locator('.ple-sr-only');
+        await xButton.click();
+    }
 }
