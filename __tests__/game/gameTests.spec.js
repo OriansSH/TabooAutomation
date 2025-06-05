@@ -22,14 +22,14 @@ test.describe('Launch Game Tests', () => {
         const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
         console.log('GC Before:', startGcBalance);
         generalPage.clickOnGameLobby(utils.gameMajesticKing)
-        await page.waitForTimeout(7000);
+        await page.waitForTimeout(10000);
         await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
                 x: 830,
                 y: 789
             },
         });
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(5000);
         await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
                 x: 830,
