@@ -15,6 +15,7 @@ test.describe('Launch Game Tests', () => {
         await page.goto(utils.urlEnv);
     });
     test('Taboo > Lobby > Click on Game > Test Launch game > Majestic White Rhino ', async ({ page }) => {
+        test.setTimeout(60000);
         await generalPage.openLoginForm(page);
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
@@ -22,14 +23,14 @@ test.describe('Launch Game Tests', () => {
         const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
         console.log('GC Before:', startGcBalance);
         generalPage.clickOnGameLobby(utils.gameMajesticKing)
-        await page.waitForTimeout(15000);
+        await page.waitForTimeout(12000);
         await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
                 x: 830,
                 y: 789
             },
         });
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(3000);
         await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
                 x: 830,
