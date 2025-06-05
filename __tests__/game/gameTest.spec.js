@@ -5,7 +5,7 @@ import { LoginPage } from '../login/LoginPage.js';
 import { GeneralPage } from "../GeneralPage.js";
 
 // This is first Version of Game Test!!
-test.describe('Lunch Game Tests', () => {
+test.describe('Launch Game Tests', () => {
     let loginPage;
     let generalPage;
 
@@ -14,7 +14,7 @@ test.describe('Lunch Game Tests', () => {
         generalPage = new GeneralPage(page);
         await page.goto(utils.urlEnv);
     });
-    test('Taboo > Lobby > Click on Game > Test lunch game > Majestic White Rhino ', async ({ page }) => {
+    test('Taboo > Lobby > Click on Game > Test Launch game > Majestic White Rhino ', async ({ page }) => {
         await generalPage.openLoginForm(page);
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
@@ -42,7 +42,7 @@ test.describe('Lunch Game Tests', () => {
         const endGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
         console.log('GC After', endGcBalance);  
     });
-    test('Taboo > Lobby > Click on Game > Test lunch game > Play Power of Merlin Megaways ', async ({ page }) => {
+    test('Taboo > Lobby > Click on Game > Test Launch game > Play Power of Merlin Megaways ', async ({ page }) => {
         await generalFunctions.openLoginForm(page);
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
