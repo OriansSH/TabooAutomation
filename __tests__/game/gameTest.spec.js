@@ -2,21 +2,26 @@ import { expect, test } from "@playwright/test";
 import * as utils from '../utils.js';
 import * as generalFunctions from '../general-functions.js';
 import { LoginPage } from '../login/LoginPage.js';
+import { GeneralPage } from "../GeneralPage.js";
 
 // This is first Version of Game Test!!
 test.describe('Lunch Game Tests', () => {
     let loginPage;
+    let generalPage;
 
     test.beforeEach(async ({ page }) => {
         loginPage = new LoginPage(page);
+        generalPage = new GeneralPage(page);
         await page.goto(utils.urlEnv);
     });
     test('Taboo > Lobby > Click on Game > Test lunch game > Majestic White Rhino ', async ({ page }) => {
-        await generalFunctions.openLoginForm(page);
+        await generalPage.openLoginForm(page);
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
-        await generalFunctions.clickLoginButton(page);
-        generalFunctions.clickOnGameLobby(page, 'Play Majestic King')
+        await loginPage.clickLoginButton(page);
+        const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
+        console.log('GC Before:', startGcBalance);
+        generalPage.clickOnGameLobby(utils.gameMajesticKing)
         await page.waitForTimeout(7000);
         await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
@@ -32,7 +37,10 @@ test.describe('Lunch Game Tests', () => {
             },
         });
         await page.waitForTimeout(5000)
-
+        await generalPage.closeGameIframe(page);
+        await page.waitForTimeout(1000)
+        const endGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
+        console.log('GC After', endGcBalance);  
     });
     test('Taboo > Lobby > Click on Game > Test lunch game > Play Power of Merlin Megaways ', async ({ page }) => {
         await generalFunctions.openLoginForm(page);

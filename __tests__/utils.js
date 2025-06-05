@@ -66,6 +66,7 @@ const lobbyRG = '.footer--container--wrapper--info--button:has-text("Go To Respo
 const headerRG = '.info-page--container--content--title:has-text("Responsible Gaming Terms")';
 const signInButtonInRegisterWidget = '.ple-local-link';
 const buyIcon = 'button.ple-buy-more'
+const gameMajesticKing = 'Play Majestic King';
 
 export {
     urlEnv,
@@ -128,4 +129,5 @@ export {
     headerRG,
     signInButtonInRegisterWidget,
     buyIcon,
+    gameMajesticKing,
 };
