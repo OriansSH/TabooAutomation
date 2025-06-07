@@ -1,0 +1,234 @@
+# Test info
+
+- Name: Launch Game Tests >> Taboo > Lobby > Click on Game > Test Launch game > Play Power of Merlin Megaways 
+- Location: /home/runner/work/TabooAutomation/TabooAutomation/__tests__/game/gameTests.spec.js:46:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Play Power of Merlin Megaways' }).first()
+
+    at Module.clickOnGameLobby (/home/runner/work/TabooAutomation/TabooAutomation/__tests__/general-functions.js:55:16)
+    at /home/runner/work/TabooAutomation/TabooAutomation/__tests__/game/gameTests.spec.js:51:26
+```
+
+# Page snapshot
+
+```yaml
+- text: OT GC 150,228.33
+- img
+- img
+- text: VIP Ranks Widget to be added
+- img
+- text: "OT Orianio Test Account id: 810"
+- img
+- text: 150,228.33
+- img
+- text: 23,935
+- button "Coin 0 BUY":
+  - img "Coin 0"
+  - text: BUY
+- text: Customer progress not found
+- region "Notifications (F8)":
+  - list
+- text: My profile Redeem Funds history Invite a friend Responsible Gaming Terms and policies Terms of service Privacy policy Sweeps policy Responsible Gaming Contact us Sign out
+- img
+- img
+- text: Friends Deserve Fortune Invite your Friends and earn Gold coins for every join Send Invite
+- img
+- text: A Golden Opportunity Awaits For 72 hours only — double your Gold coins on every purchase Reveal the Offer
+- img
+- textbox
+- text: All
+- img
+- text: Exclusive
+- img
+- text: New Releases
+- img
+- text: Hot Recommended for you
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- text: All
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- text: Exclusive
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- text: New Releases
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- text: Hot
+- list:
+  - listitem:
+    - button "Play Majestic King":
+      - img "Majestic King"
+  - listitem:
+    - button "Play Madame Luck 96":
+      - img "Madame Luck 96"
+  - listitem:
+    - button "Play Book of Riches 94":
+      - img "Book of Riches 94"
+  - listitem:
+    - button "Play Bamboo Fortune 96":
+      - img "Bamboo Fortune 96"
+  - listitem:
+    - button "Play Sheerluck 96":
+      - img "Sheerluck 96"
+- button
+- button
+- region "Notifications (F8)":
+  - list
+- img
+- text: A Golden Opportunity Awaits For 72 hours only — double your Gold coins on every purchase Reveal the Offer
+- img
+- text: "Terms of service Sweeps policy Invite friends terms of use Help center Privacy policy Contact us Support: +1 (123) 555-6218 You are aware and understand that you are providing information to Roxy Moxy. The sole use of this information will be to manage this promotion. NO PURCHASE NECESSARY to participate in Sweepstakes. SWEEPSTAKES ARE VOID WHERE PROHIBITED BY LAW. For more information about sweepstakes rules, please refer to Sweeps Policy. Copyright 2023 Sunflower Limited. All right reserved. Go To Responsible Social Gaming Roxy Moxy is operated by ''. The sweepstakes promotions and prizes offered at Roxy Moxy are operated by ''. All payments are processed by ''. Roxy Moxy All rights reserved."
+- img
+- img
+- iframe
+- iframe
+- iframe
+```
+
+# Test source
+
+```ts
+   1 | import { expect } from "@playwright/test";
+   2 | import * as utils from './utils.js';
+   3 |
+   4 | export async function openRegisterForm(page) {
+   5 |     const registerForm = page.locator('.header--auth--sign-up');
+   6 |     await registerForm.click();
+   7 | }
+   8 | export async function openLoginForm(page) {
+   9 |     const loginForm = page.locator('.header--auth--login');
+  10 |     await loginForm.click();
+  11 | }
+  12 | export async function shadowRootRegister(page, field, input) {
+  13 |     const fieldInput = page.locator('pce-register').locator(field);
+  14 |     await fieldInput.fill(input);
+  15 | }
+  16 | export async function clickLoginButton(page) {
+  17 |     const loginButton = page.locator('pce-log-in').locator('button[type="submit"]');
+  18 |     await loginButton.click();
+  19 |     return loginButton;
+  20 | }
+  21 | export async function clickRegisterButton(page) {
+  22 |     const registerButton = page.locator('pce-register').locator('button[type="submit"]');
+  23 |     await registerButton.click();
+  24 |     return registerButton;
+  25 | }
+  26 | export async function getValidationLocator(page, expectedText) {
+  27 |     return page.locator('pce-register').locator(`.error-message:has-text("${expectedText}")`);
+  28 | }
+  29 |
+  30 | export async function registerValidationText(page) {
+  31 |     const messages = [
+  32 |         'First name is required',
+  33 |         'Last name is required',
+  34 |         'Invalid email address',
+  35 |         'Password must be at least 6 characters long'
+  36 |     ];
+  37 |     for (const text of messages) {
+  38 |         const locator = page.locator('pce-register').locator(`p.error-message:has-text("${text}")`);
+  39 |         await expect(locator).toHaveText(text);
+  40 |     }
+  41 | }
+  42 | export async function loginProcess(page) {
+  43 |     await loginFunctions.shadowRootLogin(page, utils.emailField, utils.testUserEmail);
+  44 |     await loginFunctions.shadowRootLogin(page, utils.passwordField, utils.testUserPassword);
+  45 |     const registerButton = await clickLoginButton(page);
+  46 |     await expect(registerButton).toBeHidden();
+  47 | }
+  48 | export async function clickOnAvatarIcon(page) {
+  49 |     const menu = page.locator('.header--actions--avatar');
+  50 |     await menu.click();
+  51 |     return menu;
+  52 | }
+  53 | export async function clickOnGameLobby(page, gameName) {
+  54 |     const game = page.getByRole('button', { name: gameName }).nth(0);
+> 55 |     await game.click();
+     |                ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  56 | }
+  57 | export async function logOutButton(page) {
+  58 |     const logoutButton = page.locator('.side-menu-container--menu--table--entry.sign-out');
+  59 |     return logoutButton;
+  60 | }
+  61 | export async function clickOnXButton(page) {
+  62 |     await page.locator('.modal-container--modal--close').click();
+  63 | }
+  64 |
+```
