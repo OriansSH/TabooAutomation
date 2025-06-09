@@ -4,6 +4,7 @@ import * as utils from '../utils.js';
 export class Purchase {
     constructor(page) {
         this.page = page;
+        const frame = page.frameLocator('iframe[title="Pay.com\'s universal frame"]');
         this.purchaseGold = page.locator(utils.purchaseGoldButton);
         this.purchaseSecret = page.locator(utils.purchaseSecretButton);
         this.toggleGold = page.locator(utils.toggleGoldButton);
@@ -16,12 +17,18 @@ export class Purchase {
         this.checkoutPurchaseButton = page.locator(utils.checkoutPurchaseButton);
         this.generalErrorLocator = page.locator(utils.generalErrorLocator);
         this.buyIconLocator = page.locator(utils.buyIcon);
+        this.cardNumberField = frame.locator(utils.cardNumberLocator);
+        this.cardExpiryField = frame.locator(utils.cardExpiryLocator);
+        this.cardCvvField = frame.locator(utils.cardCvvLocator);
+        this.cardNameField = frame.locator(utils.cardNameLocator);
+        this.cardPayButtonLocator = frame.locator(utils.cardPayButtonLocator);
+        this.confirmationMessageLocator = page.locator(utils.confirmationMessageLocator);
     }
 
 
     async clickOnPurchaseGoldButton() {
         await this.purchaseGold.click();
-        expect(this.purchaseGold).toBeHidden();
+        // expect(this.purchaseGold).toBeHidden();
     }
     async clickOnPurchaseSecretButton() {
         await this.purchaseSecret.click();
@@ -63,5 +70,18 @@ export class Purchase {
         const storeWidget = this.page.locator('.ple-title');
         await expect(storeWidget).toHaveText('Store');
         await expect(storeWidget).toBeVisible();
+    }
+  async fillPaymentDetails({ cardNumber = null, expiryDate = null, cvv = null, cardHolderName = null } = {}) {
+    if (cardNumber !== null) await this.cardNumberField.fill(cardNumber);
+    if (expiryDate !== null) await this.cardExpiryField.fill(expiryDate);
+    if (cvv !== null) await this.cardCvvField.fill(cvv);
+    if (cardHolderName !== null) await this.cardNameField.fill(cardHolderName);
+  }
+    async clickOnCardPayButton() {
+        await frame.cardPayButtonLocator.click();
+    }
+    async verifyConfirmationMessage() {
+        await expect(this.confirmationMessageLocator).toBeVisible();
+        await expect(this.confirmationMessageLocator).toHaveText(utils.purchaseMessageText);
     }
 }

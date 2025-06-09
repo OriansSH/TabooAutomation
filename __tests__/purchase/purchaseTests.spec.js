@@ -40,35 +40,46 @@ test.describe('Purchase Tests', () => {
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
     });
-    test('Taboo > Logged In Customer > Checkout page > Add Coupon Code', async ({ page }) => {
-        await purchase.clickOnPurchaseGoldButton();
-        await purchase.verifyStoreWidget();
-        await purchase.selectPackage();
-        await purchase.fillCouponCode('Test');
-        await purchase.clickOnCouponButton();
-        await purchase.verifyOldPriceVisible();
-    });
-    test('Taboo > Logged In Customer > Checkout page > Purchase with Coupon Code', async ({ page }) => {
-        await purchase.clickOnPurchaseGoldButton();
-        await purchase.verifyStoreWidget();
-        await purchase.selectPackage();
-        await purchase.fillCouponCode('Test');
-        await purchase.clickOnCouponButton();
-        await purchase.verifyOldPriceVisible();
-        await purchase.clickOnCheckoutPurchaseButton();
-    });
+    // Removed those Tests for now becuase we remove the Coupon field from Checkout page    
+    // test('Taboo > Logged In Customer > Checkout page > Add Coupon Code', async ({ page }) => {
+    //     await purchase.clickOnPurchaseGoldButton();
+    //     await purchase.verifyStoreWidget();
+    //     await purchase.selectPackage();
+    //     await purchase.fillCouponCode('Test');
+    //     await purchase.clickOnCouponButton();
+    //     await purchase.verifyOldPriceVisible();
+    // });
+    // test('Taboo > Logged In Customer > Checkout page > Purchase with Coupon Code', async ({ page }) => {
+    //     await purchase.clickOnPurchaseGoldButton();
+    //     await purchase.verifyStoreWidget();
+    //     await purchase.selectPackage();
+    //     await purchase.fillCouponCode('Test');
+    //     await purchase.clickOnCouponButton();
+    //     await purchase.verifyOldPriceVisible();
+    //     await purchase.clickOnCheckoutPurchaseButton();
+    // });
+    // test('Taboo > Logged In Customer > Checkout page > Coupon Field > Empty Field Validation', async ({ page }) => {
+    //     await purchase.clickOnPurchaseGoldButton();
+    //     await purchase.verifyStoreWidget();
+    //     await purchase.selectPackage();
+    //     await purchase.clickOnCouponButton();
+    //     await purchase.verifyGeneralErrorVisible();
+    // });
     test('Taboo > Logged In Customer > Checkout page > Purchase without Coupon code', async ({ page }) => {
         await purchase.clickOnPurchaseGoldButton();
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
         await purchase.clickOnCheckoutPurchaseButton();
-    });
-    test('Taboo > Logged In Customer > Checkout page > coupon Field > Empty Field Validation', async ({ page }) => {
-        await purchase.clickOnPurchaseGoldButton();
-        await purchase.verifyStoreWidget();
-        await purchase.selectPackage();
-        await purchase.clickOnCouponButton();
-        await purchase.verifyGeneralErrorVisible();
+        await page.waitForTimeout(5000);
+        await purchase.fillPaymentDetails({
+            cardNumber: '4111111111111111',
+            expiryDate: '12/26',
+            cvv: '123',
+            cardHolderName: 'Test User'
+          });
+        await page.waitForTimeout(2000);
+        await purchase.cardPayButtonLocator.click();
+        await purchase.verifyConfirmationMessage();
     });
     test('Taboo > Logged In Customer > Customer Menu > Open Store Widget via Buy Icon', async ({ page }) => {
         await generalPage.openUserMenu();
