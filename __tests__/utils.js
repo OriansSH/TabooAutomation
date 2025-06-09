@@ -67,6 +67,13 @@ const headerRG = '.info-page--container--content--title:has-text("Responsible Ga
 const signInButtonInRegisterWidget = '.ple-local-link';
 const buyIcon = 'button.ple-buy-more'
 const gameMajesticKing = 'Play Majestic King';
+const confirmationMessageLocator = `.ple-title:has-text("Payment Confirmed! You're all set!")`; 
+const cardNumberLocator = '[data-testid="create-payment-card-number"]';
+const cardExpiryLocator = '[data-testid="create-payment-card-expiry-date"]';
+const cardCvvLocator = '[data-testid="create-payment-card-cvv"]';
+const cardNameLocator = '[data-testid="create-payment-card-cardholder-name"]';
+const cardPayButtonLocator = '[data-testid="btn-universal-pay-button"]';
+const purchaseMessageText = `Payment Confirmed! You're all set!`;
 
 export {
     urlEnv,
@@ -130,4 +137,11 @@ export {
     signInButtonInRegisterWidget,
     buyIcon,
     gameMajesticKing,
+    cardNumberLocator,
+    cardExpiryLocator,
+    cardCvvLocator,
+    cardNameLocator,
+    cardPayButtonLocator,
+    confirmationMessageLocator,
+    purchaseMessageText,
 };
