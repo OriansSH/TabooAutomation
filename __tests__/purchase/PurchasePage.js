@@ -27,13 +27,13 @@ export class Purchase {
         this.cardExpiryError = frame.locator(utils.cardExpiryErrorLocator);
         this.cardCvvError = frame.locator(utils.cardCvvErrorLocator);
         this.cardNameError = frame.locator(utils.cardNameErrorLocator);
+        this.inGameStore = page.locator(utils.inGameStoreLocator);
 
     }
 
 
     async clickOnPurchaseGoldButton() {
         await this.purchaseGold.click();
-        // expect(this.purchaseGold).toBeHidden();
     }
     async clickOnPurchaseSecretButton() {
         await this.purchaseSecret.click();
@@ -76,6 +76,12 @@ export class Purchase {
         await expect(storeWidget).toHaveText('Store');
         await expect(storeWidget).toBeVisible();
     }
+    async hardCodedFillPayments() {
+        await this.cardNumberField.fill('4111111111111111');
+        await this.cardExpiryField.fill('12/26');
+        await this.cardCvvField.fill('123');
+        await this.cardNameField.fill('Test User');
+    }
     async fillPaymentDetails({ cardNumber = null, expiryDate = null, cvv = null, cardHolderName = null } = {}) {
         if (cardNumber !== null) await this.cardNumberField.fill(cardNumber);
         if (expiryDate !== null) await this.cardExpiryField.fill(expiryDate);
@@ -113,5 +119,8 @@ export class Purchase {
     async invalidExpiryDateValidation(expectedMessage) {
         await expect(this.cardExpiryError).toBeVisible();
         await expect(this.cardExpiryError).toHaveText(expectedMessage);
+    }
+    async clickOnStoreInGame() {
+        await this.inGameStore.click();
     }
 }

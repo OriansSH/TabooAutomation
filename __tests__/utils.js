@@ -78,7 +78,7 @@ const cardNumberErrorLocator = '[data-testid="error-create-payment-card-number"]
 const cardExpiryErrorLocator = '[data-testid="error-create-payment-card-expiry-date"]';
 const cardCvvErrorLocator = '[data-testid="error-create-payment-card-cvv"]';
 const cardNameErrorLocator = '[data-testid="error-create-payment-card-cardholder-name"]';
-
+const inGameStoreLocator = '.quick-buy--header--coins--add.gold'
 
 export {
     urlEnv,
@@ -153,4 +153,5 @@ export {
     cardExpiryErrorLocator,
     cardCvvErrorLocator,
     cardNameErrorLocator,
+    inGameStoreLocator,
 };
