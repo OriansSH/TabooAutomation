@@ -74,6 +74,11 @@ const cardCvvLocator = '[data-testid="create-payment-card-cvv"]';
 const cardNameLocator = '[data-testid="create-payment-card-cardholder-name"]';
 const cardPayButtonLocator = '[data-testid="btn-universal-pay-button"]';
 const purchaseMessageText = `Payment Confirmed! You're all set!`;
+const cardNumberErrorLocator = '[data-testid="error-create-payment-card-number"]';
+const cardExpiryErrorLocator = '[data-testid="error-create-payment-card-expiry-date"]';
+const cardCvvErrorLocator = '[data-testid="error-create-payment-card-cvv"]';
+const cardNameErrorLocator = '[data-testid="error-create-payment-card-cardholder-name"]';
+
 
 export {
     urlEnv,
@@ -144,4 +149,8 @@ export {
     cardPayButtonLocator,
     confirmationMessageLocator,
     purchaseMessageText,
+    cardNumberErrorLocator,
+    cardExpiryErrorLocator,
+    cardCvvErrorLocator,
+    cardNameErrorLocator,
 };

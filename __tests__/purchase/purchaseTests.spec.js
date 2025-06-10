@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import * as generalFunctions from '../general-functions';
 import * as utils from '../utils.js';
 import { execSync } from 'child_process';
 import { Purchase } from './PurchasePage.js';
@@ -76,7 +75,7 @@ test.describe('Purchase Tests', () => {
             expiryDate: '12/26',
             cvv: '123',
             cardHolderName: 'Test User'
-          });
+        });
         await page.waitForTimeout(2000);
         await purchase.cardPayButtonLocator.click();
         await purchase.verifyConfirmationMessage();
@@ -87,3 +86,84 @@ test.describe('Purchase Tests', () => {
         await purchase.verifyStoreWidget();
     });
 });
+
+
+    test.describe('Purchase Tests Validations', () => {
+        let purchase;
+        let generalPage
+
+        test.beforeAll(() => {
+            execSync('node __tests__/setup/login.setup.js', { stdio: 'inherit' });
+        });
+
+        test.use({ storageState: 'storage/loginState.json' });
+
+        test.beforeEach(async ({ page }) => {
+
+            await page.goto(utils.urlEnv);
+            purchase = new Purchase(page);
+            generalPage = new GeneralPage(page);
+
+        });
+        test('Taboo > Logged In Customer > Checkout page > Pay Modal > Empty Fields Validation', async ({ page }) => {
+            await purchase.clickOnPurchaseGoldButton();
+            await purchase.verifyStoreWidget();
+            await purchase.selectPackage();
+            await purchase.clickOnCheckoutPurchaseButton();
+            await page.waitForTimeout(5000);
+            await purchase.fillPaymentDetails();
+            await purchase.cardPayButtonLocator.click();
+            await purchase.verifyRequiredFieldErrors('Required');
+        });
+        test('Taboo > Logged In Customer > Checkout page > Pay Modal > Card Number > Invalid Number', async ({ page }) => {
+            await purchase.clickOnPurchaseGoldButton();
+            await purchase.verifyStoreWidget();
+            await purchase.selectPackage();
+            await purchase.clickOnCheckoutPurchaseButton();
+            await page.waitForTimeout(5000);
+            await purchase.fillPaymentDetails({
+                cardNumber: '123',
+            });
+            await purchase.cardPayButtonLocator.click();
+            await purchase.invalidCardNumberValidation('Card number is invalid');
+        });
+        test('Taboo > Logged In Customer > Checkout page > Pay Modal > Cvv Field > Invalid Number', async ({ page }) => {
+            await purchase.clickOnPurchaseGoldButton();
+            await purchase.verifyStoreWidget();
+            await purchase.selectPackage();
+            await purchase.clickOnCheckoutPurchaseButton();
+            await page.waitForTimeout(5000);
+            await purchase.fillPaymentDetails({
+                cardNumber: '4111111111111111',
+                expiryDate: '12/26',
+                cvv: '1245',
+                cardHolderName: 'Test User'
+            });
+            await purchase.cardPayButtonLocator.click();
+            await purchase.invalidCvvNumberValidation('CVV for Visa must be 3 digits long');
+        });
+        test('Taboo > Logged In Customer > Checkout page > Pay Modal > Expiry Date Field > Invalid Date', async ({ page }) => {
+            await purchase.clickOnPurchaseGoldButton();
+            await purchase.verifyStoreWidget();
+            await purchase.selectPackage();
+            await purchase.clickOnCheckoutPurchaseButton();
+            await page.waitForTimeout(5000);
+            await purchase.fillPaymentDetails({
+                expiryDate: '01/10',
+            });
+            await purchase.cardPayButtonLocator.click();
+            await purchase.invalidExpiryDateValidation('Invalid expdate');
+        });
+        test('Taboo > Logged In Customer > Checkout page > Pay Modal > Expiry Date Field > Invalid Month', async ({ page }) => {
+            await purchase.clickOnPurchaseGoldButton();
+            await purchase.verifyStoreWidget();
+            await purchase.selectPackage();
+            await purchase.clickOnCheckoutPurchaseButton();
+            await page.waitForTimeout(5000);
+            await purchase.fillPaymentDetails({
+                expiryDate: '55/12',
+            });
+            await purchase.cardPayButtonLocator.click();
+            await purchase.invalidExpiryDateValidation('Invalid month');
+        });
+    });
