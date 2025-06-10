@@ -23,6 +23,11 @@ export class Purchase {
         this.cardNameField = frame.locator(utils.cardNameLocator);
         this.cardPayButtonLocator = frame.locator(utils.cardPayButtonLocator);
         this.confirmationMessageLocator = page.locator(utils.confirmationMessageLocator);
+        this.cardNumberError = frame.locator(utils.cardNumberErrorLocator);
+        this.cardExpiryError = frame.locator(utils.cardExpiryErrorLocator);
+        this.cardCvvError = frame.locator(utils.cardCvvErrorLocator);
+        this.cardNameError = frame.locator(utils.cardNameErrorLocator);
+
     }
 
 
@@ -71,17 +76,42 @@ export class Purchase {
         await expect(storeWidget).toHaveText('Store');
         await expect(storeWidget).toBeVisible();
     }
-  async fillPaymentDetails({ cardNumber = null, expiryDate = null, cvv = null, cardHolderName = null } = {}) {
-    if (cardNumber !== null) await this.cardNumberField.fill(cardNumber);
-    if (expiryDate !== null) await this.cardExpiryField.fill(expiryDate);
-    if (cvv !== null) await this.cardCvvField.fill(cvv);
-    if (cardHolderName !== null) await this.cardNameField.fill(cardHolderName);
-  }
+    async fillPaymentDetails({ cardNumber = null, expiryDate = null, cvv = null, cardHolderName = null } = {}) {
+        if (cardNumber !== null) await this.cardNumberField.fill(cardNumber);
+        if (expiryDate !== null) await this.cardExpiryField.fill(expiryDate);
+        if (cvv !== null) await this.cardCvvField.fill(cvv);
+        if (cardHolderName !== null) await this.cardNameField.fill(cardHolderName);
+    }
     async clickOnCardPayButton() {
         await frame.cardPayButtonLocator.click();
     }
     async verifyConfirmationMessage() {
         await expect(this.confirmationMessageLocator).toBeVisible();
         await expect(this.confirmationMessageLocator).toHaveText(utils.purchaseMessageText);
+    }
+    async verifyRequiredFieldErrors(expectedMessage) {
+        await expect(this.cardNumberError).toBeVisible();
+        await expect(this.cardNumberError).toHaveText(expectedMessage);
+
+        await expect(this.cardExpiryError).toBeVisible();
+        await expect(this.cardExpiryError).toHaveText(expectedMessage);
+
+        await expect(this.cardCvvError).toBeVisible();
+        await expect(this.cardCvvError).toHaveText(expectedMessage);
+
+        await expect(this.cardNameError).toBeVisible();
+        await expect(this.cardNameError).toHaveText(expectedMessage);
+    }
+    async invalidCardNumberValidation(expectedMessage) {
+        await expect(this.cardNumberError).toBeVisible();
+        await expect(this.cardNumberError).toHaveText(expectedMessage);
+    }
+    async invalidCvvNumberValidation(expectedMessage) {
+        await expect(this.cardCvvError).toBeVisible();
+        await expect(this.cardCvvError).toHaveText(expectedMessage);
+    }
+    async invalidExpiryDateValidation(expectedMessage) {
+        await expect(this.cardExpiryError).toBeVisible();
+        await expect(this.cardExpiryError).toHaveText(expectedMessage);
     }
 }
