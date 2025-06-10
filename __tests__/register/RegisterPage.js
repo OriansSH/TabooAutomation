@@ -59,7 +59,7 @@ export class RegisterPage {
         await this.fillEmail(email);
         await this.fillPassword(utils.testUserPassword);
         await this.fillConfirmPassword(utils.testUserPassword);
-        console.log('Registering Email:', utils.uniqueEmail);
+        console.log('Registering Email:', email);
     }
     async expectEmptyFieldValidationMessages() {
         const messages = [
