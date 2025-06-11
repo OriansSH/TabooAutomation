@@ -50,7 +50,7 @@ test.describe('Launch Game Tests', () => {
         await loginPage.fillPassword(utils.testUserPassword);
         await generalFunctions.clickLoginButton(page);
         generalFunctions.clickOnGameLobby(page, 'Play Power of Merlin Megaways')
-        await page.waitForTimeout(12000);
+        await page.waitForTimeout(20000);
         await page.locator('iframe[title="Power of Merlin Megaways"]').contentFrame().locator('canvas').click({
             position: {
                 x: 1362,
