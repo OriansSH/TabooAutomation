@@ -51,7 +51,7 @@ test.describe('Launch Game Tests', () => {
         await loginPage.clickLoginButton(page);
         const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
         console.log('Power of Merlin Megaways GC Before:', startGcBalance);
-        await generalFunctions.clickOnGameLobby(page, 'Play Power of Merlin')
+        await generalFunctions.clickOnGameLobby(page, 'Play Power of Merlin Megaways')
         await page.waitForTimeout(25000);
         await page.locator('iframe[title="Power of Merlin Megaways"]').contentFrame().locator('canvas').click({
             position: {
