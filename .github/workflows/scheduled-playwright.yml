@@ -3,7 +3,7 @@ name: Daily Playwright Tests
 on:
   schedule:
     - cron: '0 6 * * *'   # 9:00 AM IL (UTC+3)
-    - cron: '0 11 * * *'   # 14:00 AM IL (UTC+3)
+    - cron: '0 11 * * *'  # 14:00 PM IL (UTC+3)
     - cron: '0 16 * * *'  # 19:00 PM IL (UTC+3)
   workflow_dispatch:
 
@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
@@ -30,16 +30,17 @@ jobs:
         run: rm -rf ./allure-results/*
 
       - name: Run Automation tests with Allure reporter
-        run: npx playwright test --reporter=line,allure-playwright || true
+        id: test
+        run: npx playwright test --reporter=line,allure-playwright
+        continue-on-error: true
 
       - name: Install Allure CLI
         if: always()
         run: npm install -g allure-commandline
-      
+
       - name: Generate Allure Report
         if: always()
-        run: |
-          allure generate ./allure-results --output ./allure-report --clean
+        run: allure generate ./allure-results --output ./allure-report --clean
 
       - name: Deploy Allure Report to GitHub Pages
         if: always()
@@ -55,19 +56,33 @@ jobs:
         with:
           name: allure-report
           path: ./allure-report
-          
-      - name: Send Slack Notification
-        if: always()
+
+      - name: Send Slack Notification (Success)
+        if: steps.test.outcome == 'success'
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_USERNAME: PlaywrightBot
-          SLACK_ICON_EMOJI: ':robot_face:'
-          SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
+          SLACK_ICON_EMOJI: ':white_check_mark:'
+          SLACK_COLOR: 'good'
           SLACK_MESSAGE: |
-            *Daily Playwright Tests:* `${{ job.status }}`
+            *Daily Playwright Tests:* ✅ `Success`
             - Triggered by: `${{ github.actor }}`
             - Branch: `${{ github.ref_name }}`
-            - [View Logs & Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-            - :rocket: [Live Allure Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/allure-report/${{ github.run_id }}/)
+            - [Logs & Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - :rocket: [Allure Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/allure-report/${{ github.run_id }}/)
 
+      - name: Send Slack Notification (Failure)
+        if: steps.test.outcome != 'success'
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL_FAILURE }}
+          SLACK_USERNAME: PlaywrightBot
+          SLACK_ICON_EMOJI: ':x:'
+          SLACK_COLOR: 'danger'
+          SLACK_MESSAGE: |
+            *Daily Playwright Tests:* ❌ `Failure`
+            - Triggered by: `${{ github.actor }}`
+            - Branch: `${{ github.ref_name }}`
+            - [Logs & Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            - :rocket: [Allure Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/allure-report/${{ github.run_id }}/)
