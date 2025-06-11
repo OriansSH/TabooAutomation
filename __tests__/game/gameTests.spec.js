@@ -22,7 +22,7 @@ test.describe('Launch Game Tests', () => {
         await loginPage.clickLoginButton(page);
         const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
         console.log('Majestic White Rhino GC Before:', startGcBalance);
-        generalPage.clickOnGameLobby(utils.gameMajesticKing)
+        await generalPage.clickOnGameLobby(utils.gameMajesticKing)
         await page.waitForTimeout(12000);
         await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
@@ -48,10 +48,10 @@ test.describe('Launch Game Tests', () => {
         await generalFunctions.openLoginForm(page);
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
-        await generalFunctions.clickLoginButton(page);
+        await loginPage.clickLoginButton(page);
         const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
         console.log('Power of Merlin Megaways GC Before:', startGcBalance);
-        generalFunctions.clickOnGameLobby(page, 'Play Power of Merlin Megaways')
+        await generalFunctions.clickOnGameLobby(page, 'Play Power of Merlin Megaways')
         await page.waitForTimeout(25000);
         await page.locator('iframe[title="Power of Merlin Megaways"]').contentFrame().locator('canvas').click({
             position: {

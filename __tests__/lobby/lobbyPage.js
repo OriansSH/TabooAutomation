@@ -15,7 +15,7 @@ export class LobbyPage {
         this.lobbyRG = page.locator(utils.lobbyRG);
         this.headerRG = page.locator(utils.headerRG);
         this.categoriesLocator = page.locator(utils.categoriesLocator);
-
+        this.searchLocator = page.getByRole(utils.searchLocator);
     }
 
     async clickOnTermsOfService() {
@@ -57,5 +57,9 @@ export class LobbyPage {
         const categoryTab = this.categoriesLocator.filter({ hasText: name });
         await expect(categoryTab).toBeVisible();
         await categoryTab.click();
+    }
+    async clickAndSearchGame(gameName) {
+        await this.searchLocator.click();
+        await this.searchLocator.fill(gameName);
     }
 }
