@@ -13,7 +13,6 @@ test.describe('Taboo > Register Widget Tests', () => {
         await generalPage.openRegisterForm();
     });
     test('Taboo > Register Widget > Valid Register Process', async ({ page }) => {
-        await page.pause();
         const email = utils.generateUniqueEmail();
         await registerPage.hardCodedRegister(email);
         const createAccountButton = await registerPage.clickCreateAccountButton();

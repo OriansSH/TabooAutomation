@@ -30,7 +30,7 @@ const contactUsEmptyValidation = 'Message must be at least 10 characters';
 const loginButton = 'button[type="submit"]';
 const loginXButton = '.modal-container--modal--close';
 const logOutButton = '.side-menu-container--menu--table--entry.sign-out';
-const avatarIcon = '.header--actions--avatar';
+const avatarIcon = '.header--actions--avatar--progressbar';
 const purchaseGoldButton = '.header--funds--coins--add.gold'
 const purchaseSecretButton = '.header--funds--coins--add.secret'
 const toggleGoldButton = '.header--funds--toggle--icon.gold'
