@@ -8,7 +8,6 @@ export class GeneralPage {
         this.avatarIcon = page.locator(utils.avatarIcon);
         this.logoutButton = page.locator(utils.logOutButton);
         this.locatorXButton = page.locator(utils.loginXButton);
-
     }
     async openLoginForm() {
         const loginFormTrigger = this.page.locator('.header--auth--login');
