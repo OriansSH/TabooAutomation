@@ -1,13 +1,16 @@
 import { expect, test } from "@playwright/test";
 import * as utils from '../utils.js';
 import { LobbyPage } from "./lobbyPage";
+import { GeneralPage } from '../GeneralPage.js';
 
 test.describe('Taboo > Lobby > Footer Pages Tests', () => {
     let lobbyPage;
+    let generalPage
 
     test.beforeEach(async ({ page }) => {
         await page.goto(utils.urlEnv);
         lobbyPage = new LobbyPage(page);
+        generalPage = new GeneralPage(page);
     });
     test('Taboo > Not logged in customer > Fotter > Click on Terms Of Service', async () => {
         await lobbyPage.clickOnTermsOfService();
@@ -40,5 +43,9 @@ test.describe('Taboo > Lobby > Footer Pages Tests', () => {
     });
     test('Taboo > Lobby > Category > Click on Hot Category', async ({ page }) => {
         await lobbyPage.clickOnCategories('Hot');
+    });
+    test('Taboo > Lobby > Search > Click and Search gmae', async ({ page }) => {
+        await lobbyPage.clickAndSearchGame('Majestic King');
+        await generalPage.clickOnGameLobby(utils.gameMajesticKing);
     });
 });

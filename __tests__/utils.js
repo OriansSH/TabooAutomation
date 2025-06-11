@@ -80,6 +80,7 @@ const cardCvvErrorLocator = '[data-testid="error-create-payment-card-cvv"]';
 const cardNameErrorLocator = '[data-testid="error-create-payment-card-cardholder-name"]';
 const inGameStoreLocator = '.quick-buy--header--coins--add.gold'
 const categoriesLocator = '.games-container--header--wrapper--categories--category'
+const searchLocator = 'textbox'
 
 export {
     urlEnv,
@@ -155,5 +156,6 @@ export {
     cardCvvErrorLocator,
     cardNameErrorLocator,
     inGameStoreLocator,
-    categoriesLocator
+    categoriesLocator,
+    searchLocator,
 };
