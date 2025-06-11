@@ -3,7 +3,7 @@ const config = {
   workers: 4,
   testDir: './__tests__',
   use: {
-    headless: false,
+    headless: true,
     retries: 2,
     launchOptions: {
       slowMo: 700,
