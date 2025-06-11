@@ -88,7 +88,7 @@ test.describe('Purchase Tests', () => {
         await purchase.cardPayButtonLocator.click();
         await purchase.verifyConfirmationMessage();
     });
-    test('Taboo > Logged In Customer > Launch Game > Open Store > Purchase a pckage', async ({ page }) => {
+    test('Taboo > Logged In Customer > Launch Game > Open Store > Purchase a package', async ({ page }) => {
         await generalPage.clickOnGameLobby(utils.gameMajesticKing)
         page.waitForTimeout(3000);
         await purchase.clickOnStoreInGame();
