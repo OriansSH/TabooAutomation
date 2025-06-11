@@ -41,7 +41,7 @@ test.describe('Launch Game Tests', () => {
         await generalPage.closeGameIframe(page);
         await page.waitForTimeout(1000)
         const endGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
-        console.log('Majestic White Rhino GC After', endGcBalance);  
+        console.log('Majestic White Rhino GC After', endGcBalance);
     });
     test('Taboo > Lobby > Click on Game > Test Launch game > Play Power of Merlin Megaways ', async ({ page }) => {
         test.setTimeout(60000);
@@ -69,6 +69,6 @@ test.describe('Launch Game Tests', () => {
         await generalPage.closeGameIframe(page);
         await page.waitForTimeout(1000)
         const endGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
-        console.log('Power of Merlin Megaways GC After', endGcBalance);  
+        console.log('Power of Merlin Megaways GC After', endGcBalance);
     });
 });
