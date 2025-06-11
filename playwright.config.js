@@ -3,7 +3,8 @@ const config = {
   workers: 4,
   testDir: './__tests__',
   use: {
-    headless: true,
+    headless: false,
+    retries: 2,
     launchOptions: {
       slowMo: 700,
       args: ['--window-size=1920,1080'],

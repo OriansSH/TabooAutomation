@@ -15,7 +15,7 @@ test.describe('Launch Game Tests', () => {
         await page.goto(utils.urlEnv);
     });
     test('Taboo > Lobby > Click on Game > Test Launch game > Majestic White Rhino ', async ({ page }) => {
-        test.setTimeout(60000);
+        testInfo.setTimeout(60000);
         await generalPage.openLoginForm(page);
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
@@ -44,7 +44,7 @@ test.describe('Launch Game Tests', () => {
         console.log('Majestic White Rhino GC After', endGcBalance);  
     });
     test('Taboo > Lobby > Click on Game > Test Launch game > Play Power of Merlin Megaways ', async ({ page }) => {
-        test.setTimeout(60000);
+        testInfo.setTimeout(60000);
         await generalFunctions.openLoginForm(page);
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
