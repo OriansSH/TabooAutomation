@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1607","Taboo > Lobby > Click on Game > Test Launch game > Play Power of Merlin Megaways","Taboo-project","Wed Jun 11 14:11:52 UTC 2025","failed","Wed Jun 11 14:11:53 UTC 2025","Launch Game Tests","game/gameTests.spec.js","",""
+"","1894","Taboo > Lobby > Click on Game > Test Launch game > Majestic White Rhino","Taboo-project","Wed Jun 11 14:11:48 UTC 2025","failed","Wed Jun 11 14:11:50 UTC 2025","Launch Game Tests","game/gameTests.spec.js","",""
