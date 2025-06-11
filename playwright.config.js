@@ -4,7 +4,6 @@ const config = {
   testDir: './__tests__',
   use: {
     headless: true,
-    retries: 2,
     launchOptions: {
       slowMo: 700,
       args: ['--window-size=1920,1080'],
