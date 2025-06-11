@@ -29,4 +29,16 @@ test.describe('Taboo > Lobby > Footer Pages Tests', () => {
         await lobbyPage.clickOnRG();
         await lobbyPage.verifyRGHeader();
     });
+    test('Taboo > Lobby > Category > Click on All Category', async ({ page }) => {
+        await lobbyPage.clickOnCategories('All');
+    });
+    test('Taboo > Lobby > Category > Click on Exclusive Category', async ({ page }) => {
+        await lobbyPage.clickOnCategories('Exclusive');
+    });
+    test('Taboo > Lobby > Category > Click on New Releases Category', async ({ page }) => {
+        await lobbyPage.clickOnCategories('New Releases');
+    });
+    test('Taboo > Lobby > Category > Click on Hot Category', async ({ page }) => {
+        await lobbyPage.clickOnCategories('Hot');
+    });
 });

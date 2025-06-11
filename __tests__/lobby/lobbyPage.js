@@ -2,7 +2,7 @@ import { expect } from 'allure-playwright';
 import * as utils from '../utils.js';
 
 export class LobbyPage {
-    constructor (page ) {
+    constructor(page) {
         this.page = page;
         this.termsOfService = page.locator(utils.termsofservice);
         this.headerTermsOfService = page.locator(utils.headerTermsOfService);
@@ -14,6 +14,8 @@ export class LobbyPage {
         this.headerPrivecyPolicy = page.locator(utils.headerPrivacyPolicy);
         this.lobbyRG = page.locator(utils.lobbyRG);
         this.headerRG = page.locator(utils.headerRG);
+        this.categoriesLocator = page.locator(utils.categoriesLocator);
+
     }
 
     async clickOnTermsOfService() {
@@ -50,5 +52,10 @@ export class LobbyPage {
     }
     async verifyRGHeader() {
         await expect(this.headerRG).toBeVisible();
+    }
+    async clickOnCategories(name) {
+        const categoryTab = this.categoriesLocator.filter({ hasText: name });
+        await expect(categoryTab).toBeVisible();
+        await categoryTab.click();
     }
 }
