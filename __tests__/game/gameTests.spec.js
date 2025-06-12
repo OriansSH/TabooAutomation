@@ -23,7 +23,7 @@ test.describe('@game', 'Launch Game Tests', () => {
         const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
         console.log('Majestic White Rhino GC Before:', startGcBalance);
         await generalPage.clickOnGameLobby(utils.gameMajesticKing)
-        await page.waitForTimeout(100000);
+        await page.waitForTimeout(12000);
         await page.locator('iframe[title="Majestic King"]').contentFrame().locator('canvas').click({
             position: {
                 x: 830,
