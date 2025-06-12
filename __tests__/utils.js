@@ -81,6 +81,11 @@ const cardNameErrorLocator = '[data-testid="error-create-payment-card-cardholder
 const inGameStoreLocator = '.quick-buy--header--coins--add.gold'
 const categoriesLocator = '.games-container--header--wrapper--categories--category'
 const searchLocator = 'textbox'
+const fundsWidgetLocator = '.side-menu-container--menu--table--entry.funds_history';
+const fundsHistoryHeadline = '.ple-font-semibold.ple-leading-none.ple-tracking-tight.ple-title';
+// const FundsHistoryRegistrationReward = '.ple-fund-type-cell:hat-text("Registration Reward")';
+const FundsHistoryRegistrationReward = 'td:has-text("Registration Reward")';
+
 
 export {
     urlEnv,
@@ -158,4 +163,7 @@ export {
     inGameStoreLocator,
     categoriesLocator,
     searchLocator,
+    fundsWidgetLocator,
+    fundsHistoryHeadline,
+    FundsHistoryRegistrationReward
 };
