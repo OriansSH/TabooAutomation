@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5711","Taboo > Funds History Widget > Click and Open Widget","Taboo-project","Thu Jun 12 12:04:02 UTC 2025","passed","Thu Jun 12 12:04:08 UTC 2025","My Profile Tests","funds-history/fundsHistoryTests.spec.js","",""
+"","5609","Taboo > Funds History Widget > Open and Verify History","Taboo-project","Thu Jun 12 12:04:20 UTC 2025","passed","Thu Jun 12 12:04:25 UTC 2025","My Profile Tests","funds-history/fundsHistoryTests.spec.js","",""
+"","4476","Taboo > Funds History Widget > Close Funds History Widget","Taboo-project","Thu Jun 12 12:04:25 UTC 2025","passed","Thu Jun 12 12:04:30 UTC 2025","My Profile Tests","funds-history/fundsHistoryTests.spec.js","",""
