@@ -5,7 +5,7 @@ import { LoginPage } from '../login/LoginPage.js';
 import { GeneralPage } from "../GeneralPage.js";
 
 // This is first Version of Game Test!!
-test.describe('Launch Game Tests', () => {
+test.describe('@game', 'Launch Game Tests', () => {
     let loginPage;
     let generalPage;
 

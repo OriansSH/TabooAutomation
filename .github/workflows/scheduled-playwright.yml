@@ -32,10 +32,10 @@ jobs:
       # All standard tests except gameTests.spec.js
       - name: Run Automation tests with Allure reporter
         id: test
-        run: npx playwright test --ignore=__tests__/game/gameTests.spec.js --reporter=line,allure-playwright
+        run: npx playwright test --grep-invert @game --reporter=line,allure-playwright
         continue-on-error: true
 
-      # Only run game test to isolate slow/flaky behavior
+      # Only run game test to isolate slow behavior
       - name: Run game test separately (with retry)
         id: game
         run: npx playwright test __tests__/game/gameTests.spec.js --retries=1 --reporter=line,allure-playwright
