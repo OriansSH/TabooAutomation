@@ -3,7 +3,7 @@ import * as utils from '../utils.js';
 import { LobbyPage } from "./lobbyPage";
 import { GeneralPage } from '../GeneralPage.js';
 
-test.describe('Taboo > Lobby > Footer Pages Tests', () => {
+test.describe('Taboo > Lobby > Lobby Tests', () => {
     let lobbyPage;
     let generalPage
 
