@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","36589","Taboo > Lobby > Click on Game > Test Launch game > Majestic White Rhino","Taboo-project","Thu Jun 12 07:12:02 UTC 2025","passed","Thu Jun 12 07:12:39 UTC 2025","Launch Game Tests","game/gameTests.spec.js","",""
