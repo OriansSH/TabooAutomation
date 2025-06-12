@@ -5,7 +5,7 @@ import { LoginPage } from '../login/LoginPage.js';
 import { GeneralPage } from "../GeneralPage.js";
 
 // This is first Version of Game Test!!
-test.describe('Launch Game Tests', () => {
+test.describe('@game', 'Launch Game Tests', () => {
     let loginPage;
     let generalPage;
 
@@ -15,7 +15,7 @@ test.describe('Launch Game Tests', () => {
         await page.goto(utils.urlEnv);
     });
     test('Taboo > Lobby > Click on Game > Test Launch game > Majestic White Rhino ', async ({ page }) => {
-        test.setTimeout(60000);
+        test.setTimeout(100000);
         await generalPage.openLoginForm(page);
         await loginPage.fillEmail('morad@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
@@ -43,32 +43,32 @@ test.describe('Launch Game Tests', () => {
         const endGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
         console.log('Majestic White Rhino GC After', endGcBalance);
     });
-    // test('Taboo > Lobby > Click on Game > Test Launch game > Play Power of Merlin Megaways ', async ({ page }) => {
-    //     test.setTimeout(60000);
-    //     await generalFunctions.openLoginForm(page);
-    //     await loginPage.fillEmail('morad@gmail.com');
-    //     await loginPage.fillPassword(utils.testUserPassword);
-    //     await loginPage.clickLoginButton(page);
-    //     const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
-    //     console.log('Power of Merlin Megaways GC Before:', startGcBalance);
-    //     await generalFunctions.clickOnGameLobby(page, 'Play Power of Merlin Megaways')
-    //     await page.waitForTimeout(25000);
-    //     await page.locator('iframe[title="Power of Merlin Megaways"]').contentFrame().locator('canvas').click({
-    //         position: {
-    //             x: 1362,
-    //             y: 629
-    //         }
-    //     });
-    //     await page.locator('iframe[title="Power of Merlin Megaways"]').contentFrame().locator('canvas').click({
-    //         position: {
-    //             x: 1246,
-    //             y: 769
-    //         }
-    //     });
-    //     await page.waitForTimeout(5000)
-    //     await generalPage.closeGameIframe(page);
-    //     await page.waitForTimeout(1000)
-    //     const endGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
-    //     console.log('Power of Merlin Megaways GC After', endGcBalance);
-    // });
+    test('Taboo > Lobby > Click on Game > Test Launch game > Play Power of Merlin Megaways ', async ({ page }) => {
+        test.setTimeout(100000);
+        await generalFunctions.openLoginForm(page);
+        await loginPage.fillEmail('morad@gmail.com');
+        await loginPage.fillPassword(utils.testUserPassword);
+        await loginPage.clickLoginButton(page);
+        const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
+        console.log('Power of Merlin Megaways GC Before:', startGcBalance);
+        await generalFunctions.clickOnGameLobby(page, 'Play Power of Merlin Megaways')
+        await page.waitForTimeout(25000);
+        await page.locator('iframe[title="Power of Merlin Megaways"]').contentFrame().locator('canvas').click({
+            position: {
+                x: 1362,
+                y: 629
+            }
+        });
+        await page.locator('iframe[title="Power of Merlin Megaways"]').contentFrame().locator('canvas').click({
+            position: {
+                x: 1246,
+                y: 769
+            }
+        });
+        await page.waitForTimeout(5000)
+        await generalPage.closeGameIframe(page);
+        await page.waitForTimeout(1000)
+        const endGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
+        console.log('Power of Merlin Megaways GC After', endGcBalance);
+    });
 });
