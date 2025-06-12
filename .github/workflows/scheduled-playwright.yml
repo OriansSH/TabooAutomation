@@ -29,7 +29,7 @@ jobs:
       - name: Clear previous Allure results
         run: rm -rf ./allure-results/*
 
-      # All standard tests except gameTests.spec.js
+      # All tests except gameTests.spec.js
       - name: Run Automation tests with Allure reporter
         id: test
         run: npx playwright test --grep-invert @game --reporter=line,allure-playwright
