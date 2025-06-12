@@ -4,7 +4,7 @@ import * as utils from '../utils.js';
 import { GeneralPage } from "../GeneralPage.js";
 import { FundsPage } from "./fundsPage.js";
 
-test.describe('My Profile Tests', () => {
+test.describe('Funds History Tests', () => {
     let generalPage;
     let fundsPage;
 
