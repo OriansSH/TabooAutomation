@@ -14,7 +14,6 @@ export class Purchase {
         this.couponField = page.getByPlaceholder(utils.couponPlaceholder);
         this.couponButton = page.locator(utils.couponCodeButton)
         this.oldPrice = page.locator(utils.packageOldPriceClass);
-        this.checkoutPurchaseButton = page.locator(utils.checkoutPurchaseButton);
         this.generalErrorLocator = page.locator(utils.generalErrorLocator);
         this.buyIconLocator = page.locator(utils.buyIcon);
         this.cardNumberField = frame.locator(utils.cardNumberLocator);
@@ -59,10 +58,6 @@ export class Purchase {
     }
     async verifyOldPriceVisible() {
         await expect(this.oldPrice).toBeVisible();
-    }
-    async clickOnCheckoutPurchaseButton() {
-        await this.checkoutPurchaseButton.click();
-        return this.checkoutPurchaseButton;
     }
     async verifyGeneralErrorVisible() {
         await expect(this.generalErrorLocator).toHaveText(utils.couponEmptyGeneraError);

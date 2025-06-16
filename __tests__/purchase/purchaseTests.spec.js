@@ -69,7 +69,6 @@ test.describe('Purchase Tests', () => {
         await purchase.clickOnPurchaseGoldButton();
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
-        await purchase.clickOnCheckoutPurchaseButton();
         await page.waitForTimeout(5000);
         await purchase.hardCodedFillPayments();
         await page.waitForTimeout(2000);
@@ -81,7 +80,6 @@ test.describe('Purchase Tests', () => {
         await purchase.clickOnPurchaseSecretButton();
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
-        await purchase.clickOnCheckoutPurchaseButton();
         await page.waitForTimeout(5000);
         await purchase.hardCodedFillPayments();
         await page.waitForTimeout(2000);
@@ -93,7 +91,6 @@ test.describe('Purchase Tests', () => {
         page.waitForTimeout(3000);
         await purchase.clickOnStoreInGame();
         await page.getByRole('button', { name: '$500', exact: true }).click();
-        await purchase.clickOnCheckoutPurchaseButton();
         await page.waitForTimeout(5000);
         await purchase.hardCodedFillPayments();
         await page.waitForTimeout(2000);
@@ -129,7 +126,6 @@ test.describe('Purchase Tests Validations', () => {
         await purchase.clickOnPurchaseGoldButton();
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
-        await purchase.clickOnCheckoutPurchaseButton();
         await page.waitForTimeout(5000);
         await purchase.fillPaymentDetails();
         await purchase.cardPayButtonLocator.click();
@@ -139,7 +135,6 @@ test.describe('Purchase Tests Validations', () => {
         await purchase.clickOnPurchaseGoldButton();
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
-        await purchase.clickOnCheckoutPurchaseButton();
         await page.waitForTimeout(5000);
         await purchase.fillPaymentDetails({
             cardNumber: '123',
@@ -151,7 +146,6 @@ test.describe('Purchase Tests Validations', () => {
         await purchase.clickOnPurchaseGoldButton();
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
-        await purchase.clickOnCheckoutPurchaseButton();
         await page.waitForTimeout(5000);
         await purchase.fillPaymentDetails({
             cardNumber: '4111111111111111',
@@ -166,7 +160,6 @@ test.describe('Purchase Tests Validations', () => {
         await purchase.clickOnPurchaseGoldButton();
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
-        await purchase.clickOnCheckoutPurchaseButton();
         await page.waitForTimeout(5000);
         await purchase.fillPaymentDetails({
             expiryDate: '01/10',
@@ -178,7 +171,6 @@ test.describe('Purchase Tests Validations', () => {
         await purchase.clickOnPurchaseGoldButton();
         await purchase.verifyStoreWidget();
         await purchase.selectPackage();
-        await purchase.clickOnCheckoutPurchaseButton();
         await page.waitForTimeout(5000);
         await purchase.fillPaymentDetails({
             expiryDate: '55/12',

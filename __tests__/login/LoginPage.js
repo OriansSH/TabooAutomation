@@ -29,7 +29,9 @@ export class LoginPage {
         await this.fillEmail(email);
         await this.fillPassword(password);
         await this.clickLoginButton();
-        await expect(this.loginButton).toBeHidden();
+        await Promise.all([
+            this.page.waitForSelector(utils.avatarIcon, { state: 'visible' }),
+        ]);
     }
     async expectEmptyFieldsValidations() {
         for (const text of this.validationMessage) {

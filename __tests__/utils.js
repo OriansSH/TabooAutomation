@@ -47,7 +47,6 @@ const myProfileLocator = '.side-menu-container--menu--table--entry.my_profile';
 const couponPlaceholder = 'Coupon code';
 const couponCodeButton = 'button.ple-coupon-code-button';
 const packageOldPriceClass = '.ple-old-price';
-const checkoutPurchaseButton = 'button.ple-submit-button';
 // Need to change the validation. Currently its defaulte validation.
 const couponEmptyGeneraError = 'Required'
 const contactUsLocator = '.side-menu-container--menu--table--entry.contact';
@@ -130,7 +129,6 @@ export {
     couponPlaceholder,
     couponCodeButton,
     packageOldPriceClass,
-    checkoutPurchaseButton,
     couponEmptyGeneraError,
     contactUsLocator,
     contactUsMessageId,
