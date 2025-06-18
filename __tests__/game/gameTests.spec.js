@@ -17,7 +17,7 @@ test.describe('@game', 'Launch Game Tests', () => {
     test('Taboo > Lobby > Click on Game > Test Launch game > Majestic White Rhino ', async ({ page }) => {
         test.setTimeout(100000);
         await generalPage.openLoginForm(page);
-        await loginPage.fillEmail('morad@gmail.com');
+        await loginPage.fillEmail('testautomation@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
         await loginPage.clickLoginButton(page);
         const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
@@ -46,7 +46,7 @@ test.describe('@game', 'Launch Game Tests', () => {
     test('Taboo > Lobby > Click on Game > Test Launch game > Play Power of Merlin Megaways ', async ({ page }) => {
         test.setTimeout(100000);
         await generalFunctions.openLoginForm(page);
-        await loginPage.fillEmail('morad@gmail.com');
+        await loginPage.fillEmail('testautomation@gmail.com');
         await loginPage.fillPassword(utils.testUserPassword);
         await loginPage.clickLoginButton(page);
         const startGcBalance = await page.locator('.header--funds--coins span').nth(1).textContent();
