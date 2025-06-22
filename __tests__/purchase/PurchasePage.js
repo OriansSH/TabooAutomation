@@ -10,24 +10,48 @@ export class Purchase {
         this.toggleGold = page.locator(utils.toggleGoldButton);
         this.toggleSecret = page.locator(utils.toggleSecretButton);
         this.xButton = page.locator(utils.xButton);
-        this.packageLocator = page.locator('div').filter({ hasText: /^500kGOLD COINS\+550Secret Coins\$500$/ }).getByRole('button');
+        this.packageLocator = page.getByRole('button', { name: '$500', exact: true });
         this.couponField = page.getByPlaceholder(utils.couponPlaceholder);
         this.couponButton = page.locator(utils.couponCodeButton)
         this.oldPrice = page.locator(utils.packageOldPriceClass);
         this.generalErrorLocator = page.locator(utils.generalErrorLocator);
         this.buyIconLocator = page.locator(utils.buyIcon);
+        this.cardNumberField = null
+        this.cardExpiryField = null
+        this.cardCvvField = null
+        this.cardNameField = null
+        this.cardPayButtonLocator = null
+        this.cardNumberError = null;
+        this.cardExpiryError = null;
+        this.cardCvvError = null;
+        this.cardNameError = null;
+        this.confirmationMessageLocator = page.locator(utils.confirmationMessageLocator);
+        this.inGameStore = page.locator(utils.inGameStoreLocator);
+
+    }
+    async getPaymentFrame() {
+        const outerHandle = await this.page.locator('iframe[title="PayDotCom Checkout"]').elementHandle();
+        const outerFrame = await outerHandle.contentFrame();
+
+        const innerHandle = await outerFrame.locator('iframe[name="_private_universal_frame"]').elementHandle();
+        return await innerHandle.contentFrame();
+    }
+
+    async initPaymentLocators() {
+        if (this.cardNumberField) return;
+
+        const frame = await this.getPaymentFrame();
+
         this.cardNumberField = frame.locator(utils.cardNumberLocator);
         this.cardExpiryField = frame.locator(utils.cardExpiryLocator);
         this.cardCvvField = frame.locator(utils.cardCvvLocator);
         this.cardNameField = frame.locator(utils.cardNameLocator);
         this.cardPayButtonLocator = frame.locator(utils.cardPayButtonLocator);
-        this.confirmationMessageLocator = page.locator(utils.confirmationMessageLocator);
+
         this.cardNumberError = frame.locator(utils.cardNumberErrorLocator);
         this.cardExpiryError = frame.locator(utils.cardExpiryErrorLocator);
         this.cardCvvError = frame.locator(utils.cardCvvErrorLocator);
         this.cardNameError = frame.locator(utils.cardNameErrorLocator);
-        this.inGameStore = page.locator(utils.inGameStoreLocator);
-
     }
 
 
@@ -72,12 +96,14 @@ export class Purchase {
         await expect(storeWidget).toBeVisible();
     }
     async hardCodedFillPayments() {
+        await this.initPaymentLocators();
         await this.cardNumberField.fill('4111111111111111');
         await this.cardExpiryField.fill('12/26');
         await this.cardCvvField.fill('123');
         await this.cardNameField.fill('Test User');
     }
     async fillPaymentDetails({ cardNumber = null, expiryDate = null, cvv = null, cardHolderName = null } = {}) {
+        await this.initPaymentLocators();
         if (cardNumber !== null) await this.cardNumberField.fill(cardNumber);
         if (expiryDate !== null) await this.cardExpiryField.fill(expiryDate);
         if (cvv !== null) await this.cardCvvField.fill(cvv);

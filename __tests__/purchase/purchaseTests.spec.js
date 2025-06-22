@@ -3,6 +3,7 @@ import * as utils from '../utils.js';
 import { execSync } from 'child_process';
 import { Purchase } from './PurchasePage.js';
 import { GeneralPage } from '../GeneralPage.js';
+import { clickLoginButton } from '../general-functions.js';
 
 test.describe('Purchase Tests', () => {
     let purchase;
